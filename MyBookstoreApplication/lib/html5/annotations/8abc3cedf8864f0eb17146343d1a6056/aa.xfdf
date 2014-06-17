@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+<fields />
+<annots>
+<highlight subject="é«äº®" page="0" rect="272.042,403.22,322.226,575.3" name="a70f91f3-b0c6-4ada-b890-f82d2008e2b9" title="Wallker" date="D:20140610153404+08'00'" color="#FFFF00" interior-color="#000000" opacity="1" creationdate="D:20140610145159+08'00'" coords="322.226,403.22,322.226,575.3,272.042,403.22,272.042,575.3"><popup flags="print,nozoom,norotate" page="0" rect="271.898,450.719,451.898,570.72" open="no"/></highlight>
+<underline subject="ä¸åçº¿" page="0" rect="272.042,585.092,322.226,733.052" name="85e3b2f6-fab3-46b0-94bd-b15179f9ac99" title="Wallker" date="D:20140610153404+08'00'" color="#FF0000" opacity="1" creationdate="D:20140610145206+08'00'" coords="322.226,585.092,322.226,733.052,272.042,585.092,272.042,733.052"><popup flags="print,nozoom,norotate" page="0" rect="271.898,450.719,451.898,570.72" open="no"/></underline>
+<text subject="annotations.types.stickyNote" page="0" rect="144.781937,179.902307,168.031942,203.152313" name="c2d4b932-f6cd-7a71-be73-d2bace81289b" title="aa" date="D:20140610165607+08'00'" color="#FFFF00" creationdate="D:20140610165607+08'00'" icon="Comment"><contents-richtext><body xmlns="http://www.w3.org/1999/xhtml" xfa:spec="2.0.2" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3"><p dir="ltr"><span style="font-size:10.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal" dir="ltr">bb</span></p></body></contents-richtext><popup flags="print,nozoom,norotate" page="0" rect="37.270598,72.390968,97.270613,192.390998" open="yes"/></text>
+</annots>
+<pages>
+<defmtx matrix="0,1.333333,1.333333,0,0,0" />
+</pages>
+</xfdf>

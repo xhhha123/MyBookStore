@@ -1,0 +1,560 @@
+html,body{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+    width:100%; 
+    height:100%; 
+    overflow:hidden;
+}
+html{
+    background:transparent;
+}
+body{
+    background-color: #929292;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+@media screen and (max-width: 820px){
+    /*hide slider and search controls when screen width is less than 820px*/
+    #slider{
+        display: none;
+    }
+    .search-component, .ui-ele.search-component{
+        display: none;
+    }
+}
+
+@media print {
+    html {
+        height: 100%;
+    }
+
+    body {
+        overflow: visible;
+        height: 100%;
+    }
+
+    #ui-display, .ui-front {
+        display: none !important;
+    }
+
+    #printDisplay {
+        display: block !important;
+        height: 100%;
+    }
+
+    img {
+        page-break-after: always;
+        display: block;
+    }
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}		
+
+#controlWrapper{
+    height: 100px;
+}
+
+#control.ui-widget-header {
+    font-size: 10px;
+    height: 30px;
+    /*    background-color: #eee;
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(0.0, #ddd), color-stop(1.0, #fff));
+        background: -webkit-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+        background: -moz-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+        background: -ms-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+        background: -o-linear-gradient(center bottom, #ddd 0%, #fff 100%);*/
+
+    /*                background: -moz-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+                    background: -webkit-gradient(linear, left bottom, left top, color-stop(0.0, #ddd), color-stop(1.0, #fff));*/
+    border-bottom: 1px solid #4d4d4d;
+    padding: 5px 3px 2px 3px;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
+    -moz-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
+    -webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
+    min-width:650px; /*prevent control bar from wrapping*/
+    /*    visibility: hidden;  hide on load*/
+    display: none;
+}
+
+/* enable text selection*/
+#control, #sidePanel, .ui-tab-nav, .popup-comment-container * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+.ui-label{
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+#control button img{
+    padding: 0;
+    margin:0;
+}
+
+#control button{
+    height:26px;
+}
+#control .ui-buttonset label{
+    height: 24px;
+}
+
+#control input, #control button {
+    margin: 0 4px;
+    font-family: "Trebuchet MS", "Helvetica", "Arial", "Verdana", "sans-serif";
+}
+
+.ui-menu.ui-menu-dropdown{
+    position: absolute;
+    width: 150px;
+    cursor: pointer;
+    z-index: 200;
+    font-size: 12px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a{
+    cursor: pointer;
+}
+
+#sidePanel{
+    font-size: 62.5%;
+    font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif";
+    width: 195px;
+    z-index: 10;
+    position: fixed;
+    overflow:hidden; /*fixes floating scroll problems on chrome*/
+    display:none; /* hide on load*/
+}
+
+#tabs{
+    height:100%;
+}
+
+.toolbar-input-text{
+    font-size: 11pt;
+}
+
+#fullSearchView{
+    border: 1px solid #C0C0C0;
+    /*    width: 190px;*/
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    margin-left: auto;
+    margin-right: auto;
+    /*    background: white;*/
+}
+
+#fullSearchView div{
+    padding: 5px 3px;
+}
+
+#bookmarkView, #thumbnailView{
+    border: 1px solid #C0C0C0;
+    top: 6px;
+    position: relative;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#clipboard {
+    margin-top: -10px;  
+    height: 1px; 
+    width: 1px;
+    position: absolute; 
+    display:none;
+}
+
+#searchView{
+    padding: 6px;
+}
+#fullSearchBox{
+    width: 105px;
+}
+.bookmarkWrapper{
+    cursor: pointer;
+    padding:2px;    
+    display:inline-block;
+    border: none !important; /** prevent border in active/hover state */
+}
+.bookmarkWrapper span{
+    display: block;
+
+}
+.thumbContainer{
+    cursor:pointer;
+    margin-bottom: 1px;
+    border: none !important; /** prevent border in active/hover state */
+}
+
+.thumbContainer.selected, .bookmarkWrapper.selected, .searchResultLine.selected,
+.ui-buttonset label.ui-state-active {
+    /* color for UI active selection */
+    /*background: #CBE6EF !important;*/
+}
+
+/*.searchResultLine:hover, .thumbContainer:hover, .bookmarkWrapper:hover{
+    background-color:#CBE6EF;
+}*/
+
+.searchResultLine{	
+    border-style: solid;
+    border-color: silver;
+    border-width: 0 0 1px 0 !important;
+    cursor:pointer;
+
+}
+
+#range{
+    width: 30px;
+    text-align: right;
+}
+#slider{
+    margin: 9px 0 0 5px;
+    width: 150px;
+
+}
+
+.separator {
+    display: inline;
+    border-left: 1px solid #d3d3d3;
+    border-right: 1px solid #fff;
+    height: 22px;
+    width:0px;
+    margin: 4px;
+}
+
+/* thumbnail control */
+.thumb{
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #000000;
+}
+
+.thumbdiv{
+    /*    border: 1px solid #000000;*/
+    clear:both;
+}
+
+.thumbPad{
+    float: left;
+}
+
+#thumbnailView{
+    -webkit-user-drag: none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+img, canvas, button{
+    -webkit-user-select: none; 
+    -moz-user-select:none;
+    -webkit-user-drag: none;
+     user-select:none;
+}
+
+select#displayModes { width: 160px; }
+
+/* jquery ui style overrides*/
+
+.ui-ele{
+    /*display: inline-block;*/
+    float: right;
+    /*    font-family: "Trebuchet MS", "Helvetica", "Arial", "Verdana", "sans-serif";*/
+}
+
+input.ui-ele{
+    /*    font-family: "Trebuchet MS", "Helvetica", "Arial", "Verdana", "sans-serif";*/
+}
+
+.ui-selectmenu-menu li a, .ui-selectmenu-status {
+    padding: 0.3em 2em; 
+    border: 0;
+}
+.ui-selectmenu-menu li a{
+    font-size: 62.5%;
+}
+a.ui-selectmenu { 
+    border: 1px solid gray;
+    margin:0;
+}
+.ui-selectmenu-menu{
+
+}
+
+#control .ui-label{
+    margin-top: 4px;
+    font-size: 15px;
+    font-family: "Trebuchet MS", "Helvetica", "Arial", "Verdana", "sans-serif";
+}
+.ui-icon.ui-icon-custom-fit-width{
+    background-image: url('Resources/arrow_ew.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-fit-page{
+    background-image: url('Resources/arrow_nsew.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-tool-pan{
+    background-image: url('Resources/hand.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-tool-text{
+    background-image: url('Resources/ibeam.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-back{
+    background-image: url('Resources/reverse_green.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-thumbnail{
+    background-image: url('Resources/pictures_thumbs.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-outline{
+    background-image: url('Resources/outline.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-find{
+    background-image: url('Resources/find.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-note{
+    background-image: url('Resources/note.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-prev{
+    background-image: url('Resources/reverse_green.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-next{
+    background-image: url('Resources/play_green.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-rotate{
+    background-image: url('Resources/arrow_rotate_clockwise.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon.ui-icon-custom-arrow-l{
+    background-image: url('Resources/arrows_sp.png') !important;
+    background-position: -16px 0px;
+}
+.ui-icon.ui-icon-custom-arrow-r{
+    background-image: url('Resources/arrows_sp.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-search{
+    background-image: url('Resources/magnifier.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon.ui-icon-custom-screen{
+    background-image: url('Resources/application_osx_double.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon.ui-icon-custom-print{
+    background-image: url('Resources/printer_color.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon.ui-icon-custom-arrow-d{
+    background-image: url('Resources/arrow_down.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon.ui-icon-custom-cancel{
+    background-image: url('Resources/cancel.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon.ui-icon-custom-offline{
+    background-image: url('Resources/offline_mode.png') !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-page-single{
+    background-image: url(Resources/page_single.png) !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-page-single-cont{
+    background-image: url(Resources/page_cont.png) !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-page-facing{
+    background-image: url(Resources/page_facing.png) !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-page-facing-cont{
+    background-image: url(Resources/page_facing_cont.png) !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-page-cover{
+    background-image: url(Resources/page_cover_facing.png) !important;
+    background-position: 0 0;
+}
+.ui-icon.ui-icon-custom-page-cover-cont{
+    background-image: url(Resources/page_cover_facing_cont.png) !important;
+    background-position: 0 0;
+}
+
+
+/*.ui-state-default, .ui-slider-handle{
+    button borders
+    border: 1px solid #777 !important;
+}*/
+
+.display-mode-option * .ui-icon{
+    background-position: 0 0;
+}
+
+.ui-buttonset label{
+    background:white;
+}
+
+.ui-tabs .ui-widget-content {
+    /*    background: "rgba(255, 255, 255, 0.1)";*/
+    /*    background: transparent;*/
+
+}
+a.ui-tabs-anchor{
+    /*This fixes a bug in Chrome where an icon focus ring appears in the tab content*/
+    outline:none;    
+}
+
+.ui-tabs .ui-tabs-panel{
+    padding: 0 0 .8em 0 !important;
+    height:100%;
+}
+
+.ui-selectmenu-status .menucontent{
+    display: none;
+}
+
+
+.ui-dialog{
+    font-size:11px;
+}
+.ui-dialog .ui-dialog-buttonpane{
+    padding:0;
+}
+.ui-dialog a{
+    outline: none;
+}
+
+.overlayMessage {
+    text-align: center;
+    font-size: 30px;
+    font-family: "Trebuchet MS", "Helvetica", "Arial", "Verdana", "sans-serif";
+}
+
+.ui-progressbar {
+    position: relative;
+}
+
+.ui-progressbar-value {
+    background: limegreen !important;
+}
+
+.progressLabel {
+    position: absolute;
+    left: 25%;
+    top: 4px;
+}
+
+.no-title .ui-dialog-titlebar {
+    display: none;
+}
+
+.center-screen-error{
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:10em;
+    margin-top: -5em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    /*    border: 1px solid #ccc;
+        background-color: #f3f3f3;*/
+    font-size:smaller;
+    position:fixed;
+}

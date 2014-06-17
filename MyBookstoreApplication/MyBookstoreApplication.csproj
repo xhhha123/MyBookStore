@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2DDBA46B-7C9B-4C48-A004-671DE10B80BF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyBookstoreApplication</RootNamespace>
+    <AssemblyName>MyBookstoreApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DesktopBuildPackageLocation>obj\Debug\Package\MyBookstoreApplication.zip</DesktopBuildPackageLocation>
+    <DeployIisAppPath>Default Web Site/MyBookstoreApplication_deploy</DeployIisAppPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PDFNet, Version=6.2.1.23927, Culture=neutral, PublicKeyToken=36167be3f67ac39c, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>PDFNet\PDFNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bookstore.aspx" />
+    <Content Include="bookstore.css" />
+    <Content Include="lib\flash\crossdomain.xml" />
+    <Content Include="lib\flash\doc\AC_OETags.js" />
+    <Content Include="lib\flash\doc\all-classes.html" />
+    <Content Include="lib\flash\doc\all-index-A.html" />
+    <Content Include="lib\flash\doc\all-index-B.html" />
+    <Content Include="lib\flash\doc\all-index-C.html" />
+    <Content Include="lib\flash\doc\all-index-D.html" />
+    <Content Include="lib\flash\doc\all-index-E.html" />
+    <Content Include="lib\flash\doc\all-index-F.html" />
+    <Content Include="lib\flash\doc\all-index-G.html" />
+    <Content Include="lib\flash\doc\all-index-H.html" />
+    <Content Include="lib\flash\doc\all-index-I.html" />
+    <Content Include="lib\flash\doc\all-index-J.html" />
+    <Content Include="lib\flash\doc\all-index-K.html" />
+    <Content Include="lib\flash\doc\all-index-L.html" />
+    <Content Include="lib\flash\doc\all-index-M.html" />
+    <Content Include="lib\flash\doc\all-index-N.html" />
+    <Content Include="lib\flash\doc\all-index-O.html" />
+    <Content Include="lib\flash\doc\all-index-P.html" />
+    <Content Include="lib\flash\doc\all-index-Q.html" />
+    <Content Include="lib\flash\doc\all-index-R.html" />
+    <Content Include="lib\flash\doc\all-index-S.html" />
+    <Content Include="lib\flash\doc\all-index-T.html" />
+    <Content Include="lib\flash\doc\all-index-U.html" />
+    <Content Include="lib\flash\doc\all-index-V.html" />
+    <Content Include="lib\flash\doc\all-index-W.html" />
+    <Content Include="lib\flash\doc\all-index-X.html" />
+    <Content Include="lib\flash\doc\all-index-Y.html" />
+    <Content Include="lib\flash\doc\all-index-Z.html" />
+    <Content Include="lib\flash\doc\asdoc.js" />
+    <Content Include="lib\flash\doc\class-summary.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\controls\class-list.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\controls\DisplayModes.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\controls\DocumentViewer.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\controls\FitMode.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\controls\package-detail.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\controls\ToolModes.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\Bookmark.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\class-list.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\Document.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\Link.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\Metadata.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\OnLoadCanvasAsyncCallbackArgs.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\OnLoadPartAsyncCallbackArgs.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\OnLoadThumbnailAsyncCallbackArgs.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\package-detail.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\PageInfo.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\text\class-list.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\text\OnTextSearchAsyncCallbackArgs.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\text\OnTextSelectionAsyncCallbackArgs.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\text\package-detail.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\text\Quad.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\text\SearchModes.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\text\SearchResultCode.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\text\TextSearch.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\documents\text\TextSelector.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\io\class-list.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\io\HttpAjaxPartRetriever.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\io\HttpPartRetriever.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\io\HttpStreamingPartRetriever.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\io\IPartRetriever.html" />
+    <Content Include="lib\flash\doc\com\pdftron\webviewer\io\package-detail.html" />
+    <Content Include="lib\flash\doc\cookies.js" />
+    <Content Include="lib\flash\doc\help.js" />
+    <Content Include="lib\flash\doc\images\AirIcon12x12.gif" />
+    <Content Include="lib\flash\doc\images\collapsed.gif" />
+    <Content Include="lib\flash\doc\images\detailHeaderRule.jpg" />
+    <Content Include="lib\flash\doc\images\detailSectionHeader.jpg" />
+    <Content Include="lib\flash\doc\images\expanded.gif" />
+    <Content Include="lib\flash\doc\images\inherit-arrow.gif" />
+    <Content Include="lib\flash\doc\images\inheritedSummary.gif" />
+    <Content Include="lib\flash\doc\images\logo.jpg" />
+    <Content Include="lib\flash\doc\images\P_AlternativeMetadataIndicator_30x28_N.png" />
+    <Content Include="lib\flash\doc\images\titleTableBottom.jpg" />
+    <Content Include="lib\flash\doc\images\titleTableMiddle.jpg" />
+    <Content Include="lib\flash\doc\images\titleTableTop.jpg" />
+    <Content Include="lib\flash\doc\index-list.html" />
+    <Content Include="lib\flash\doc\index.html" />
+    <Content Include="lib\flash\doc\override.css" />
+    <Content Include="lib\flash\doc\package-frame.html" />
+    <Content Include="lib\flash\doc\package-list.html" />
+    <Content Include="lib\flash\doc\package-summary.html" />
+    <Content Include="lib\flash\doc\print.css" />
+    <Content Include="lib\flash\doc\style.css" />
+    <Content Include="lib\flash\doc\title-bar.html" />
+    <Content Include="lib\flash\FABridge.js" />
+    <Content Include="lib\flash\FlashUtils.js" />
+    <Content Include="lib\flash\HttpAjaxPartRetriever.js" />
+    <Content Include="lib\flash\ReaderControl.swf" />
+    <Content Include="lib\flash\socketpolicy\flashpolicy.xml" />
+    <Content Include="lib\flash\socketpolicy\README.txt" />
+    <Content Include="lib\flash\swfobject.js" />
+    <Content Include="lib\html5\AnnotationPanel.html" />
+    <Content Include="lib\html5\AnnotationPanel.js" />
+    <Content Include="lib\html5\ControlUtils.js" />
+    <Content Include="lib\html5\CoreControls.js" />
+    <Content Include="lib\html5\CoreWorker.js" />
+    <Content Include="lib\html5\DecryptWorker.js" />
+    <Content Include="lib\html5\defaultScriptExtension.js" />
+    <Content Include="lib\html5\defaultStyleExtension.css" />
+    <Content Include="lib\html5\docViewer.css" />
+    <Content Include="lib\html5\doc\index.html" />
+    <Content Include="lib\html5\doc\PDFTron.png" />
+    <Content Include="lib\html5\doc\symbols\Annotations.Annotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.BoxControlHandle.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.BoxSelectionModel.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.ButtonWidgetAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.CalloutControlHandle.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.ChoiceWidgetAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.Color.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.ControlHandle.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.EllipseAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.FreeHandAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.FreeTextAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.IPathAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.LineAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.LineControlHandle.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.LineSelectionModel.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.MarkupAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.PathControlHandle.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.PathSelectionModel.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.Point.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.PopupAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.Rect.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.RectangleAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.SelectionAlgorithm.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.SelectionModel.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.StampAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.StickyAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.TextHighlightAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.TextMarkupAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.TextSelectionModel.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.TextSquigglyAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.TextStrikeoutAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.TextUnderlineAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.TextWidgetAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\Annotations.WidgetAnnotation.html" />
+    <Content Include="lib\html5\doc\symbols\CoreControls.AnnotationManager.html" />
+    <Content Include="lib\html5\doc\symbols\CoreControls.Bookmark.html" />
+    <Content Include="lib\html5\doc\symbols\CoreControls.DisplayMode.html" />
+    <Content Include="lib\html5\doc\symbols\CoreControls.DisplayModeManager.html" />
+    <Content Include="lib\html5\doc\symbols\CoreControls.DisplayModes.html" />
+    <Content Include="lib\html5\doc\symbols\CoreControls.Document.html" />
+    <Content Include="lib\html5\doc\symbols\CoreControls.DocumentViewer.FitMode.html" />
+    <Content Include="lib\html5\doc\symbols\CoreControls.DocumentViewer.html" />
+    <Content Include="lib\html5\doc\symbols\CoreControls.DocumentViewer.SearchMode.html" />
+    <Content Include="lib\html5\doc\symbols\CoreControls.DocumentViewer.SearchResults.html" />
+    <Content Include="lib\html5\doc\symbols\CoreControls.html" />
+    <Content Include="lib\html5\doc\symbols\PartRetrievers.html" />
+    <Content Include="lib\html5\doc\symbols\PartRetrievers.HttpPartRetriever.html" />
+    <Content Include="lib\html5\doc\symbols\PartRetrievers.LocalPartRetriever.html" />
+    <Content Include="lib\html5\doc\symbols\PartRetrievers.StreamingPartRetriever.html" />
+    <Content Include="lib\html5\doc\symbols\PDFTron.png" />
+    <Content Include="lib\html5\doc\symbols\ReaderControl.config.html" />
+    <Content Include="lib\html5\doc\symbols\ReaderControl.config.ui.html" />
+    <Content Include="lib\html5\doc\symbols\ReaderControl.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.AnnotationEditTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.CalloutCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.EllipseCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.FreeHandCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.GenericAnnotationCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.LineCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.MobileStickyCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.PageCoordinate.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.PanTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.PolygonCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.PolylineCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.RectangleCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.StickyCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.TextAnnotationCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.TextHighlightCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.TextSelectTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.TextStrikeoutCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.TextTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.TextUnderlineCreateTool.html" />
+    <Content Include="lib\html5\doc\symbols\Tools.Tool.html" />
+    <Content Include="lib\html5\doc\symbols\WebViewerInterface.html" />
+    <Content Include="lib\html5\doc\symbols\_global_.html" />
+    <Content Include="lib\html5\external\custom.css" />
+    <Content Include="lib\html5\external\fastclick.js" />
+    <Content Include="lib\html5\external\i18next-1.6.0.min.js" />
+    <Content Include="lib\html5\external\images\glyphicons_072_bookmark.png" />
+    <Content Include="lib\html5\external\images\loading.gif" />
+    <Content Include="lib\html5\external\images\treeview-default-line.gif" />
+    <Content Include="lib\html5\external\images\treeview-default.gif" />
+    <Content Include="lib\html5\external\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="lib\html5\external\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="lib\html5\external\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="lib\html5\external\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="lib\html5\external\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="lib\html5\external\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="lib\html5\external\images\ui-icons_222222_256x240.png" />
+    <Content Include="lib\html5\external\images\ui-icons_454545_256x240.png" />
+    <Content Include="lib\html5\external\images\ui-icons_888888_256x240.png" />
+    <Content Include="lib\html5\external\jquery-1.7.2.min.js" />
+    <Content Include="lib\html5\external\jquery-1.8.2.min.js" />
+    <Content Include="lib\html5\external\jquery-ui\jquery-ui-1.10.0.custom.js" />
+    <Content Include="lib\html5\external\jquery-ui\jquery-ui-1.10.0.custom.min.js" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-bg_glass_65_CBE6EF_1x400.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-icons_222222_256x240.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-icons_454545_256x240.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-icons_888888_256x240.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\jquery-ui-1.10.0.custom.css" />
+    <Content Include="lib\html5\external\jquery-ui\themes\cloud\jquery-ui-1.10.0.custom.min.css" />
+    <Content Include="lib\html5\external\jquery.cookie.js" />
+    <Content Include="lib\html5\external\jquery.doubletap.js" />
+    <Content Include="lib\html5\external\jquery.flexibleArea.js" />
+    <Content Include="lib\html5\external\jquery.mobile\images\ajax-loader.gif" />
+    <Content Include="lib\html5\external\jquery.mobile\images\icons-18-black.png" />
+    <Content Include="lib\html5\external\jquery.mobile\images\icons-18-white.png" />
+    <Content Include="lib\html5\external\jquery.mobile\images\icons-36-black.png" />
+    <Content Include="lib\html5\external\jquery.mobile\images\icons-36-white.png" />
+    <Content Include="lib\html5\external\jquery.mobile\jquery.mobile-1.3.2.css" />
+    <Content Include="lib\html5\external\jquery.mobile\jquery.mobile-1.3.2.js" />
+    <Content Include="lib\html5\external\jquery.mobile\jquery.mobile-1.3.2.min.css" />
+    <Content Include="lib\html5\external\jquery.mobile\jquery.mobile-1.3.2.min.js" />
+    <Content Include="lib\html5\external\jquery.mousewheel.js" />
+    <Content Include="lib\html5\external\jquery.treeview.css" />
+    <Content Include="lib\html5\external\jquery.treeview.js" />
+    <Content Include="lib\html5\external\modernizr.custom.js" />
+    <Content Include="lib\html5\external\touchr.js" />
+    <Content Include="lib\html5\external\turn.js" />
+    <Content Include="lib\html5\FlashUtils.js" />
+    <Content Include="lib\html5\flipbook.html" />
+    <Content Include="lib\html5\flipbook.js" />
+    <Content Include="lib\html5\legal.txt" />
+    <Content Include="lib\html5\MobileReaderControl.html" />
+    <Content Include="lib\html5\MobileReaderControl.js" />
+    <Content Include="lib\html5\ReaderControl.css" />
+    <Content Include="lib\html5\ReaderControl.html" />
+    <Content Include="lib\html5\ReaderControl.js" />
+    <Content Include="lib\html5\ReaderControlConfig.js" />
+    <Content Include="lib\html5\Resources\annot\annot_callout.png" />
+    <Content Include="lib\html5\Resources\annot\annot_custom_diamond.png" />
+    <Content Include="lib\html5\Resources\annot\annot_edit.png" />
+    <Content Include="lib\html5\Resources\annot\annot_ellipse.png" />
+    <Content Include="lib\html5\Resources\annot\annot_highlight.png" />
+    <Content Include="lib\html5\Resources\annot\annot_line.png" />
+    <Content Include="lib\html5\Resources\annot\annot_paintbrush.png" />
+    <Content Include="lib\html5\Resources\annot\annot_polygon.png" />
+    <Content Include="lib\html5\Resources\annot\annot_polyline.png" />
+    <Content Include="lib\html5\Resources\annot\annot_rectangle.png" />
+    <Content Include="lib\html5\Resources\annot\annot_save.png" />
+    <Content Include="lib\html5\Resources\annot\annot_sticky_note.png" />
+    <Content Include="lib\html5\Resources\annot\annot_strikethrough.png" />
+    <Content Include="lib\html5\Resources\annot\annot_underline.png" />
+    <Content Include="lib\html5\Resources\annot\PopupIcon.png" />
+    <Content Include="lib\html5\Resources\application_osx_double.png" />
+    <Content Include="lib\html5\Resources\arrows_sp.png" />
+    <Content Include="lib\html5\Resources\arrow_down.png" />
+    <Content Include="lib\html5\Resources\arrow_ew.png" />
+    <Content Include="lib\html5\Resources\arrow_nsew.png" />
+    <Content Include="lib\html5\Resources\arrow_rotate_anticlockwise.png" />
+    <Content Include="lib\html5\Resources\arrow_rotate_clockwise.png" />
+    <Content Include="lib\html5\Resources\cancel.png" />
+    <Content Include="lib\html5\Resources\cog.png" />
+    <Content Include="lib\html5\Resources\color_none.png" />
+    <Content Include="lib\html5\Resources\dragginghand.cur" />
+    <Content Include="lib\html5\Resources\dragginghand.png" />
+    <Content Include="lib\html5\Resources\find.png" />
+    <Content Include="lib\html5\Resources\folder_up.png" />
+    <Content Include="lib\html5\Resources\hand.cur" />
+    <Content Include="lib\html5\Resources\hand.png" />
+    <Content Include="lib\html5\Resources\ibeam.png" />
+    <Content Include="lib\html5\Resources\icon_credits.txt" />
+    <Content Include="lib\html5\Resources\img_trans.gif" />
+    <Content Include="lib\html5\Resources\magnifier.png" />
+    <Content Include="lib\html5\Resources\next_green.png" />
+    <Content Include="lib\html5\Resources\note.png" />
+    <Content Include="lib\html5\Resources\offline_mode.png" />
+    <Content Include="lib\html5\Resources\outline.png" />
+    <Content Include="lib\html5\Resources\page_cont.png" />
+    <Content Include="lib\html5\Resources\page_cover_facing.png" />
+    <Content Include="lib\html5\Resources\page_cover_facing_cont.png" />
+    <Content Include="lib\html5\Resources\page_facing.png" />
+    <Content Include="lib\html5\Resources\page_facing_cont.png" />
+    <Content Include="lib\html5\Resources\page_single.png" />
+    <Content Include="lib\html5\Resources\pencil.png" />
+    <Content Include="lib\html5\Resources\pictures_thumbs.png" />
+    <Content Include="lib\html5\Resources\play_green.png" />
+    <Content Include="lib\html5\Resources\previous-green.png" />
+    <Content Include="lib\html5\Resources\printer_color.png" />
+    <Content Include="lib\html5\Resources\reverse_green.png" />
+    <Content Include="lib\html5\Resources\section_collapsed.png" />
+    <Content Include="lib\html5\Resources\section_expanded.png" />
+    <Content Include="lib\html5\Resources\tiny.gif" />
+    <Content Include="lib\html5\Resources\transparent.png" />
+    <Content Include="lib\html5\Resources\user.png" />
+    <Content Include="lib\html5\WebViewerInterface.js" />
+    <Content Include="lib\resources\backbone\backbone-min.js" />
+    <Content Include="lib\resources\backbone\underscore-min.js" />
+    <Content Include="lib\resources\i18next-1.7.1\i18next-1.7.1.js" />
+    <Content Include="lib\resources\i18next-1.7.1\i18next-1.7.1.min.js" />
+    <Content Include="lib\resources\jquery-1.10.2.min.js" />
+    <Content Include="lib\resources\jquery-ui-1.10.3\jquery-ui.min.js" />
+    <Content Include="lib\resources\modernizr.custom.js" />
+    <Content Include="lib\resources\PIE-1.0.0\PIE.htc" />
+    <Content Include="lib\resources\PIE-1.0.0\PIE.js" />
+    <Content Include="lib\resources\PIE-1.0.0\PIE_uncompressed.htc" />
+    <Content Include="lib\resources\PIE-1.0.0\PIE_uncompressed.js" />
+    <Content Include="lib\resources\themes\classic\icons.css" />
+    <Content Include="lib\resources\themes\classic\images\application_osx_double.png" />
+    <Content Include="lib\resources\themes\classic\images\application_side_contract.png" />
+    <Content Include="lib\resources\themes\classic\images\application_side_expand.png" />
+    <Content Include="lib\resources\themes\classic\images\arrows_sp.png" />
+    <Content Include="lib\resources\themes\classic\images\arrow_down.png" />
+    <Content Include="lib\resources\themes\classic\images\arrow_ew.png" />
+    <Content Include="lib\resources\themes\classic\images\arrow_nsew.png" />
+    <Content Include="lib\resources\themes\classic\images\arrow_rotate_anticlockwise.png" />
+    <Content Include="lib\resources\themes\classic\images\arrow_rotate_clockwise.png" />
+    <Content Include="lib\resources\themes\classic\images\cancel.png" />
+    <Content Include="lib\resources\themes\classic\images\color_none.png" />
+    <Content Include="lib\resources\themes\classic\images\disk_download.png" />
+    <Content Include="lib\resources\themes\classic\images\dragginghand.png" />
+    <Content Include="lib\resources\themes\classic\images\find.png" />
+    <Content Include="lib\resources\themes\classic\images\folder_up.png" />
+    <Content Include="lib\resources\themes\classic\images\hand.png" />
+    <Content Include="lib\resources\themes\classic\images\ibeam.png" />
+    <Content Include="lib\resources\themes\classic\images\icon_credits.txt" />
+    <Content Include="lib\resources\themes\classic\images\img_trans.gif" />
+    <Content Include="lib\resources\themes\classic\images\information.png" />
+    <Content Include="lib\resources\themes\classic\images\magnifier.png" />
+    <Content Include="lib\resources\themes\classic\images\next_green.png" />
+    <Content Include="lib\resources\themes\classic\images\note.png" />
+    <Content Include="lib\resources\themes\classic\images\offline_mode.png" />
+    <Content Include="lib\resources\themes\classic\images\outline.png" />
+    <Content Include="lib\resources\themes\classic\images\page_cont.png" />
+    <Content Include="lib\resources\themes\classic\images\page_cover_facing.png" />
+    <Content Include="lib\resources\themes\classic\images\page_cover_facing_cont.png" />
+    <Content Include="lib\resources\themes\classic\images\page_facing.png" />
+    <Content Include="lib\resources\themes\classic\images\page_facing_cont.png" />
+    <Content Include="lib\resources\themes\classic\images\page_single.png" />
+    <Content Include="lib\resources\themes\classic\images\pencil.png" />
+    <Content Include="lib\resources\themes\classic\images\pictures_thumbs.png" />
+    <Content Include="lib\resources\themes\classic\images\play_green.png" />
+    <Content Include="lib\resources\themes\classic\images\previous-green.png" />
+    <Content Include="lib\resources\themes\classic\images\printer_color.png" />
+    <Content Include="lib\resources\themes\classic\images\reverse_green.png" />
+    <Content Include="lib\resources\themes\classic\images\section_collapsed.png" />
+    <Content Include="lib\resources\themes\classic\images\section_expanded.png" />
+    <Content Include="lib\resources\themes\classic\images\tiny.gif" />
+    <Content Include="lib\resources\themes\classic\images\transparent.png" />
+    <Content Include="lib\resources\themes\classic\images\user.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-bg_glass_65_CBE6EF_1x400.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-icons_222222_256x240.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-icons_454545_256x240.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-icons_888888_256x240.png" />
+    <Content Include="lib\resources\themes\cloud\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="lib\resources\themes\cloud\jquery-ui-1.10.0.custom.css" />
+    <Content Include="lib\resources\themes\cloud\jquery-ui-1.10.0.custom.min.css" />
+    <Content Include="lib\silverlight\ReaderControl.xap" />
+    <Content Include="lib\silverlight\Silverlight.js" />
+    <Content Include="lib\silverlight\SLMedallion_ENU.png" />
+    <Content Include="lib\silverlight\SLXMLHttpRequest.xap" />
+    <Content Include="lib\universal\bookstore.css" />
+    <Content Include="lib\universal\index.html" />
+    <Content Include="lib\universal\MimeoView.html" />
+    <Content Include="lib\universal\Raul.html" />
+    <Content Include="lib\universal\settings.js" />
+    <Content Include="lib\universal\universal.css" />
+    <Content Include="lib\universal\universal.js" />
+    <Content Include="lib\WebViewer.js" />
+    <Content Include="lib\WebViewer.min.js" />
+    <Content Include="MyWebViewer.aspx" />
+    <Content Include="settings.js" />
+    <Content Include="Styles\ajax-loader-large.gif" />
+    <Content Include="Styles\ajax-loader.gif" />
+    <Content Include="Upload.aspx" />
+    <Content Include="Documents.aspx" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="UploadCompleted.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bookstore.aspx.cs">
+      <DependentUpon>Bookstore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bookstore.aspx.designer.cs">
+      <DependentUpon>Bookstore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\html5\annotationHandler.ashx.cs">
+      <DependentUpon>annotationHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="MyWebViewer.aspx.cs">
+      <DependentUpon>MyWebViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyWebViewer.aspx.designer.cs">
+      <DependentUpon>MyWebViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDFTronApiClient.cs" />
+    <Compile Include="Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Documents.aspx.cs">
+      <DependentUpon>Documents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Documents.aspx.designer.cs">
+      <DependentUpon>Documents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UploadCompleted.aspx.cs">
+      <DependentUpon>UploadCompleted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadCompleted.aspx.designer.cs">
+      <DependentUpon>UploadCompleted.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="annotations\" />
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\flash\README.rtf" />
+    <Content Include="lib\flash\socketpolicy\Perl_xinetd\flashpolicyd.xinet" />
+    <Content Include="lib\flash\socketpolicy\Perl_xinetd\in.flashpolicyd.pl" />
+    <Content Include="lib\flash\socketpolicy\Perl_xinetd\install.sh" />
+    <Content Include="lib\flash\socketpolicy\Python_init\flashpolicyd.init" />
+    <Content Include="lib\flash\socketpolicy\Python_init\flashpolicyd.py" />
+    <Content Include="lib\flash\socketpolicy\Python_init\install.sh" />
+    <Content Include="lib\flash\socketpolicy\Python_xinetd\flashpolicyd.xinet" />
+    <Content Include="lib\flash\socketpolicy\Python_xinetd\in.flashpolicyd.py" />
+    <Content Include="lib\flash\socketpolicy\Python_xinetd\install.sh" />
+    <Content Include="lib\flash\socketpolicy\Standalone\flashpolicyd.pl" />
+    <Content Include="lib\flash\socketpolicy\Standalone\flashpolicyd.py" />
+    <Content Include="lib\html5\.htaccess" />
+    <Content Include="lib\html5\annotationHandler.php">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="lib\html5\annotations\default.xfdf" />
+    <Content Include="lib\html5\formDataHandler.php" />
+    <Content Include="lib\html5\Resources\i18n\translation-en.json" />
+    <Content Include="lib\html5\Resources\i18n\translation-es.json" />
+    <Content Include="lib\html5\Resources\i18n\translation-fr.json" />
+    <Content Include="lib\html5\Resources\i18n\translation-gl.json" />
+    <Content Include="lib\html5\Resources\i18n\translation-pt_br.json" />
+    <Content Include="lib\html5\Resources\i18n\translation-ru.json" />
+    <Content Include="lib\resources\backbone\backbone-min.map" />
+    <Content Include="lib\resources\backbone\underscore-min.map" />
+    <Content Include="lib\resources\i18next-1.7.1\translation-en.json" />
+    <Content Include="lib\resources\i18next-1.7.1\translation-es.json" />
+    <Content Include="lib\resources\i18next-1.7.1\translation-fr.json" />
+    <Content Include="lib\resources\i18next-1.7.1\translation-gl.json" />
+    <Content Include="lib\resources\i18next-1.7.1\translation-pt_br.json" />
+    <Content Include="lib\resources\i18next-1.7.1\translation-ru.json" />
+    <Content Include="lib\resources\PIE-1.0.0\PIE.php" />
+    <Content Include="lib\silverlight\Documentation.chm" />
+    <Content Include="lib\universal\Mimeo_QuickGuide_low.pdf.xod" />
+    <Content Include="lib\html5\annotationHandler.ashx" />
+    <None Include="Schema\document.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schema\documents.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60970</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

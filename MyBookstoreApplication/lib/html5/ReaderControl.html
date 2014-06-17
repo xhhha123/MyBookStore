@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>ReaderControl</title>
+        <link type="text/css" rel="stylesheet" href="external/jquery-ui/themes/cloud/jquery-ui-1.10.0.custom.min.css">
+        <link type="text/css" rel="stylesheet" href="external/jquery.treeview.css" media="screen" />
+        <link type="text/css" rel="stylesheet" href="ReaderControl.css">
+        <script type="text/javascript" src="external/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="external/jquery-ui/jquery-ui-1.10.0.custom.min.js"></script>
+        <script type="text/javascript" src="external/jquery.treeview.js"></script>
+        <script type="text/javascript" src="external/jquery.mousewheel.js"></script>
+        <script type="text/javascript" src="external/jquery.flexibleArea.js"></script>
+        <script type="text/javascript" src="external/modernizr.custom.js"></script>
+        
+        
+        <link type="text/css" rel="stylesheet" href="docViewer.css">
+        
+        <script src="CoreControls.js"></script>
+        <script type="text/javascript" src="WebViewerInterface.js"></script>
+        <script type="text/javascript" src="ControlUtils.js"></script>
+        <script type="text/javascript" src="ReaderControl.js"></script>
+        <script type="text/javascript" src="ReaderControlConfig.js"></script>
+    </head>
+    <body>
+        <div id="ui-display">
+            <input id="clipboard" readonly/>
+            <div id="control" class="ui-widget-header">
+                <button id="fullScreenButton" class="ui-ele" type="button" data-i18n="[title]controlbar.fullScreen"></button>
+                <button id="printButton" class="ui-ele" type="button" data-i18n="[title]controlbar.print"></button>
+                <div class="separator ui-ele search-component"></div>
+                <button id="searchButton" class="ui-ele search-component" type="button" data-i18n="[title]controlbar.search"></button>
+                <input id="searchBox" class="ui-ele toolbar-input-text search-component" type="text" name="search" style="width: 65px; margin-right:2px;" data-i18n="[title]controlbar.search"/>
+
+                <div class="separator ui-ele"></div>
+
+                <span id="tools" class="ui-ele">
+                    <input type="radio" id="pan" name="radioSecond" />
+                    <label for="pan" data-i18n="[title]controlbar.pan"></label>
+                    <input type="radio" id="textSelect" name="radioSecond" checked="checked" />
+                    <label for="textSelect" data-i18n="[title]controlbar.textSelect"></label>
+                </span>
+
+                <div class="separator ui-ele"></div>
+
+                <div id="fitModes" title="Page layout" class="ui-ele">
+                    <input type="radio" id="fitWidth" name="radioFirst"/>
+                    <label for="fitWidth" data-i18n="[title]controlbar.fitWidth"></label>
+                    <input type="radio" id="fitPage" name="radioFirst"/>
+                    <label for="fitPage" data-i18n="[title]controlbar.fitPage"></label>
+                </div>
+
+                <div class="separator ui-ele"></div>
+
+                <span class="ui-ele ui-label" id="zoomPercent">%</span>
+                <input class="ui-ele toolbar-input-text" type="text" name="zoomBox" id="zoomBox" style="width:33px; text-align:right;" data-i18n="[title]controlbar.zoom"/>
+                <div class="ui-ele" style="width: 100px;" id="slider" data-i18n="[title]controlbar.zoom"></div>
+
+                <div class="separator ui-ele"></div>
+
+                <button type="button" id="nextPage" class="ui-ele" data-i18n="[title]controlbar.nextPage"></button>
+                <span class="ui-ele  ui-label" id="totalPages" style="margin-right:4px;margin-top:3px">/0</span>
+                <input class="ui-ele toolbar-input-text" type="text" pattern="[0-9]*" name="pageNumberBox" id="pageNumberBox" style="width:37px; text-align:right;"/>               
+                <button type="button" id="prevPage" class="ui-ele" data-i18n="[title]controlbar.previousPage"></button>
+
+                <div class="separator ui-ele"></div>
+                <button id="rotateButton" class="ui-ele" type="button" data-i18n="[title]controlbar.rotate"></button>
+                <div class="separator ui-ele"></div>
+                <div id="displayModeMenu" class="ui-ele" data-i18n="[title]controlbar.pageLayoutModes">
+                    <button type="button" id="displayModeMenuButton"></button>
+                </div>
+                <button id="toggleSidePanel" title="Toggle side panel" style="float:left;" type="button" data-i18n="[title]controlbar.toggleSidePanel"></button>
+            </div>
+            <ul id="displayModeMenuList" class="ui-widget ui-menu-dropdown" style="display: none">
+                <li data-display-mode="single"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-single"></span><div data-i18n="controlbar.layoutMode.single"></div></a></li>
+                <li data-display-mode="single-cont"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-single-cont"></span><div data-i18n="controlbar.layoutMode.continuous"></div></a></li>
+                <li data-display-mode="facing"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-facing"></span><div data-i18n="controlbar.layoutMode.facing"></div></a></li>
+                <li data-display-mode="facing-cont"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-facing-cont"></span><div data-i18n="controlbar.layoutMode.facingContinuous"></div></a></li>
+                <li data-display-mode="cover"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-cover"></span><div data-i18n="controlbar.layoutMode.cover"></div></a></li>
+                <li data-display-mode="cover-cont"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-cover-cont"></span><div data-i18n="controlbar.layoutMode.coverContinuous"></div></a></li>
+            </ul>
+            <div id="sidePanel" class="demo">
+                <div id="tabs" class="ui-tabs-hide">
+                    <ul>
+                        <li><a href="#tabs-1"><span class="ui-icon ui-icon-custom-thumbnail" data-i18n="[title]sidepanel.thumbnails"></span></a></li>
+                        <li><a href="#tabs-2"><span class="ui-icon ui-icon-custom-outline" data-i18n="[title]sidepanel.outline"></span></a></li>
+                        <li><a href="#tabs-3"><span class="ui-icon ui-icon-custom-find" data-i18n="[title]sidepanel.fullDocumentSearch"></span></a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <div id="thumbnailView"></div>
+                    </div>
+                    <div id="tabs-2">
+                        <ul id="bookmarkView" class="filetree treeview ui-widget-content"></ul>
+                    </div>
+                    <div id="tabs-3" >
+                        <div id="searchView">
+                            <div>
+                                <input type="text" name="fullSearch" id="fullSearchBox" />
+                                <button id="fullSearchButton" style="position:relative; top:2px" type="button" data-i18n="sidepanel.searchTab.buttonGo"></button>
+                            </div>
+                            <div>
+                                <input id="wholeWordSearch" type="checkbox"><span class="ui-label" data-i18n="sidepanel.searchTab.wholeWordOnly"></span></div>
+                            <div>
+                                <input id="caseSensitiveSearch" type="checkbox"><span class="ui-label" data-i18n="sidepanel.searchTab.caseSensitive"></span>
+                            </div>
+                        </div>
+                        <div id="fullSearchView"></div>
+                    </div>
+                    <div id="tabs-4">
+                        <!-- reserved for annotations tab -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="overlayMessage" class="overlayMessage" style="display:none"></div>
+
+            <div id="printDialog" style="display:none">
+                <div>
+                    <span data-i18n="print.pagesToPrint"></span><input type="text" id="printPageNumbers" />
+                </div>
+                <br/>
+                <div id="printProgress"><div class="progressLabel"></div></div>
+            </div>
+
+            <div id="DocumentViewer" style="overflow: auto;width:100%">
+                <div id="docpad">
+                </div>
+                <div id="viewer">
+                    
+                </div>
+            </div>
+            <div style="display:none" id="unsupportedErrorMessage" class="ui-widget center-screen-error">
+                <div class="ui-state-error">
+                    <div class="ui-state-error-text">
+                        <span class="ui-icon ui-icon-alert" style="float: left;margin: 5px;"></span>
+                        <div data-i18n="unsupportedBrowser"></div>
+                    </div>
+                    <ul>
+                        <li>Internet Explorer 9+</li>
+                        <li>Google Chrome</li>
+                        <li>Firefox</li>
+                        <li>Safari</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="printDisplay" style="display:none">
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="document" type="documentType" />
+  <xsd:complexType name="documentType">
+    <xsd:all>
+      <xsd:element name="documentId" type="xsd:string" />
+      <xsd:element name="name" type="xsd:string" />
+      <xsd:element name="createdDate" type="xsd:dateTime" />
+      <xsd:element name="shareId" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="uploadedDate" type="xsd:dateTime" minOccurs="0" />
+      <xsd:element name="queuedDate" type="xsd:dateTime" minOccurs="0" />
+      <xsd:element name="convertedDate" type="xsd:dateTime" minOccurs="0" />
+      <xsd:element name="originalSize" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="originalState" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="pdfState" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="xodState" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="thumbnailState" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="demo" type="xsd:boolean"/>
+    </xsd:all>
+  </xsd:complexType>
+</xsd:schema>

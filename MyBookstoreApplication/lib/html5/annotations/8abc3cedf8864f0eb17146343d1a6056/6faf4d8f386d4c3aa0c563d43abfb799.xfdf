@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+<fields />
+<annots>
+<text subject="annotations.types.stickyNote" page="0" rect="66.741193,749.463717,89.991199,726.213711" name="5cb3c609-a241-b8d8-1f15-cd7f1ec9a275" title="aa" date="D:20140604114333+08'00'" color="#FFFF00" creationdate="D:20140604111731+08'00'" icon="Comment"><contents-richtext><body xmlns="http://www.w3.org/1999/xhtml" xfa:spec="2.0.2" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3"><p dir="ltr"><span dir="ltr" style="font-size:10.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal">aa</span></p></body></contents-richtext><popup flags="print,nozoom,norotate" page="0" rect="0,830.199031,120.00003,770.199016" open="yes"/></text>
+<text subject="annotations.types.stickyNote" page="0" rect="213.679465,726.319593,236.929471,703.069588" name="50b1d53f-5c5e-4d13-92f4-6ff16a4aeb40" title="bb" date="D:20140604114333+08'00'" color="#FFFF00" creationdate="D:20140604111822+08'00'" icon="Comment"><contents-richtext><body xmlns="http://www.w3.org/1999/xhtml" xfa:spec="2.0.2" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3"><p dir="ltr"><span dir="ltr" style="font-size:10.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal">bb</span></p></body></contents-richtext><popup flags="print,nozoom,norotate" page="0" rect="132.944151,807.054908,252.944181,747.054893" open="yes"/></text>
+<text subject="annotations.types.stickyNote" page="0" rect="294.953015,733.316654,318.203021,710.066648" name="1f2ffe6c-639d-906d-1013-84787df34302" date="D:20140604114934+08'00'" color="#FFFF00" creationdate="D:20140604114934+08'00'" icon="Comment"><contents-richtext><body xmlns="http://www.w3.org/1999/xhtml" xfa:spec="2.0.2" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3"><p dir="ltr"><span dir="ltr" style="font-size:10.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal">admin</span></p></body></contents-richtext><popup flags="print,nozoom,norotate" page="0" rect="271.270656,809.207849,391.270686,749.207834" open="yes"/></text>
+</annots>
+<pages>
+<defmtx matrix="1.333333,0,0,-1.333333,0,1122.72" />
+</pages>
+</xfdf>

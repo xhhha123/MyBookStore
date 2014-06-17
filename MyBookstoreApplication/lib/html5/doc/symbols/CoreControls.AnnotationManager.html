@@ -1,0 +1,3121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+
+                <title>PDFTron WebViewer HTML5 API Reference - CoreControls.AnnotationManager</title>
+                <link rel="stylesheet" href="../../external/jquery.treeview.css" />
+                <script src="../../external/jquery-1.7.2.min.js" type="text/javascript"></script>
+                <script src="../../external/jquery.cookie.js" type="text/javascript"></script>
+                <script src="../../external/jquery.treeview.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){		
+				$(".classList").treeview({ persist: "cookie", cookieId: "webviewer-html5-ref"});		
+			});
+		</script>
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	width: 800px;
+}
+
+a:visited {
+    color: #036;
+}
+a:link {
+    color: #07A;
+}
+a:hover{
+    color: #f38805 !important;
+}
+a.selected{
+    font-weight: bold;
+    color: #f38805 !important;
+    background: none !important;
+}
+.header
+{
+	clear: both;
+	background-color: #ccc;
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 1px solid #7F8FB1;
+	height: 1px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+#index
+{
+	margin-top: 24px;
+	float: left;
+	width: 260px;
+	position: absolute;
+	left: 8px;
+	background-color: #F3F3F3;
+/*	padding: 8px;*/
+        padding: 4px 0 0 0px;
+}
+
+#content
+{
+	margin-left: 290px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+/*	padding: 0;*/
+        padding: 0 8px 0 2px;
+/*	margin: 0 0 0 8px;*/
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+/*	padding: 0;
+	margin: 0 0 8px 0;*/
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+/*	background-color: #7F8FB1;*/
+	background-color: #07A;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+/*	border: 1px #7F8FB1 solid;*/
+        border: 1px #07A solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	font-style: italic;
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+/** CUSTOM */
+tr.deprecated .fixedFont
+{
+	text-decoration: line-through;
+}
+
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">   
+                    <div><img src="PDFTron.png"></div>
+                    <h2>WebViewer HTML5 API Reference v1.7.1.24014</h2>
+                </div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+        
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><i><a href="../symbols/Annotations.html">Annotations</a></i><ul>
+	
+	<li><a href="../symbols/Annotations.Annotation.html">.Annotation</a></li>
+	
+	<li><a href="../symbols/Annotations.BoxControlHandle.html">.BoxControlHandle</a></li>
+	
+	<li><a href="../symbols/Annotations.BoxSelectionModel.html">.BoxSelectionModel</a></li>
+	
+	<li><a href="../symbols/Annotations.ButtonWidgetAnnotation.html">.ButtonWidgetAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.CalloutControlHandle.html">.CalloutControlHandle</a></li>
+	
+	<li><a href="../symbols/Annotations.ChoiceWidgetAnnotation.html">.ChoiceWidgetAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.Color.html">.Color</a></li>
+	
+	<li><a href="../symbols/Annotations.ControlHandle.html">.ControlHandle</a></li>
+	
+	<li><a href="../symbols/Annotations.EllipseAnnotation.html">.EllipseAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.FreeHandAnnotation.html">.FreeHandAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.FreeTextAnnotation.html">.FreeTextAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.IPathAnnotation.html">.IPathAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.LineAnnotation.html">.LineAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.LineControlHandle.html">.LineControlHandle</a></li>
+	
+	<li><a href="../symbols/Annotations.LineSelectionModel.html">.LineSelectionModel</a></li>
+	
+	<li><a href="../symbols/Annotations.MarkupAnnotation.html">.MarkupAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.PathControlHandle.html">.PathControlHandle</a></li>
+	
+	<li><a href="../symbols/Annotations.PathSelectionModel.html">.PathSelectionModel</a></li>
+	
+	<li><a href="../symbols/Annotations.Point.html">.Point</a></li>
+	
+	<li><a href="../symbols/Annotations.PopupAnnotation.html">.PopupAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.Rect.html">.Rect</a></li>
+	
+	<li><a href="../symbols/Annotations.RectangleAnnotation.html">.RectangleAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.SelectionAlgorithm.html">.SelectionAlgorithm</a></li>
+	
+	<li><a href="../symbols/Annotations.SelectionModel.html">.SelectionModel</a></li>
+	
+	<li><a href="../symbols/Annotations.StampAnnotation.html">.StampAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.StickyAnnotation.html">.StickyAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextHighlightAnnotation.html">.TextHighlightAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextMarkupAnnotation.html">.TextMarkupAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextSelectionModel.html">.TextSelectionModel</a></li>
+	
+	<li><a href="../symbols/Annotations.TextSquigglyAnnotation.html">.TextSquigglyAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextStrikeoutAnnotation.html">.TextStrikeoutAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextUnderlineAnnotation.html">.TextUnderlineAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextWidgetAnnotation.html">.TextWidgetAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.WidgetAnnotation.html">.WidgetAnnotation</a></li>
+	
+	</ul></li><li><i><a href="../symbols/CoreControls.html">CoreControls</a></i><ul>
+	
+	<li><a href="../symbols/CoreControls.AnnotationManager.html">.AnnotationManager</a></li>
+	
+	<li><a href="../symbols/CoreControls.Bookmark.html">.Bookmark</a></li>
+	
+	<li><a href="../symbols/CoreControls.DisplayMode.html">.DisplayMode</a></li>
+	
+	<li><a href="../symbols/CoreControls.DisplayModeManager.html">.DisplayModeManager</a></li>
+	
+	<li><a href="../symbols/CoreControls.DisplayModes.html">.DisplayModes</a></li>
+	
+	<li><a href="../symbols/CoreControls.Document.html">.Document</a></li>
+	
+	<li><a href="../symbols/CoreControls.DocumentViewer.html">.DocumentViewer</a></li>
+	
+	<li><a href="../symbols/CoreControls.DocumentViewer.FitMode.html">.DocumentViewer.FitMode</a></li>
+	
+	<li><a href="../symbols/CoreControls.DocumentViewer.SearchMode.html">.DocumentViewer.SearchMode</a></li>
+	
+	<li><a href="../symbols/CoreControls.DocumentViewer.SearchResults.html">.DocumentViewer.SearchResults</a></li>
+	
+	</ul></li><li><i><a href="../symbols/PartRetrievers.html">PartRetrievers</a></i><ul>
+	
+	<li><a href="../symbols/PartRetrievers.HttpPartRetriever.html">.HttpPartRetriever</a></li>
+	
+	<li><a href="../symbols/PartRetrievers.LocalPartRetriever.html">.LocalPartRetriever</a></li>
+	
+	<li><a href="../symbols/PartRetrievers.StreamingPartRetriever.html">.StreamingPartRetriever</a></li>
+	
+	</ul></li><li><a href="../symbols/ReaderControl.html">ReaderControl</a></li>
+	
+	<li><i><a href="../symbols/ReaderControl.config.html">ReaderControl.config</a></i><ul>
+	
+	<li><a href="../symbols/ReaderControl.config.ui.html">.ui</a></li>
+	
+	</ul></li><li><i><a href="../symbols/Tools.html">Tools</a></i><ul>
+	
+	<li><a href="../symbols/Tools.AnnotationEditTool.html">.AnnotationEditTool</a></li>
+	
+	<li><a href="../symbols/Tools.CalloutCreateTool.html">.CalloutCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.EllipseCreateTool.html">.EllipseCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.FreeHandCreateTool.html">.FreeHandCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.GenericAnnotationCreateTool.html">.GenericAnnotationCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.LineCreateTool.html">.LineCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.MobileStickyCreateTool.html">.MobileStickyCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.PageCoordinate.html">.PageCoordinate</a></li>
+	
+	<li><a href="../symbols/Tools.PanTool.html">.PanTool</a></li>
+	
+	<li><a href="../symbols/Tools.PolygonCreateTool.html">.PolygonCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.PolylineCreateTool.html">.PolylineCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.RectangleCreateTool.html">.RectangleCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.StickyCreateTool.html">.StickyCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextAnnotationCreateTool.html">.TextAnnotationCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextHighlightCreateTool.html">.TextHighlightCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextSelectTool.html">.TextSelectTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextStrikeoutCreateTool.html">.TextStrikeoutCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextTool.html">.TextTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextUnderlineCreateTool.html">.TextUnderlineCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.Tool.html">.Tool</a></li>
+	
+	</ul></li><li><i><a href="../symbols/WebViewerInterface.html">WebViewerInterface</a></i><ul>
+	
+        </ul></li>
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				Class CoreControls.AnnotationManager
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+				
+			
+				Represents an object that manages the Annotations that appear on a Document's pages when displayed in a DocumentViewer.
+				
+				<!--
+					<br /><i>Defined in: </i> &lt;..\AnnotationManager.js&gt;.
+				-->
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class CoreControls.AnnotationManager.">
+				<caption>Class Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/CoreControls.AnnotationManager.html#constructor">CoreControls.AnnotationManager</a></b>(docViewer)
+							</div>
+							<div class="description">Creates a new instance of AnnotationManager.</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class CoreControls.AnnotationManager.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#AddAnnotation">AddAnnotation</a></b>(annotation, imported)
+								</div>
+								<div class="description">Adds the specified annotation to the managed list of annotations</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#CanModify">CanModify</a></b>(annotation)
+								</div>
+								<div class="description">Whether or not the current user can modify the annotation.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#CreateButtonWidget">CreateButtonWidget</a></b>(widget)
+								</div>
+								<div class="description">Creates the DOM element for a button widget</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#CreateChoiceWidget">CreateChoiceWidget</a></b>(widget)
+								</div>
+								<div class="description">Creates the DOM element for a choice widget</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#CreateTextWidget">CreateTextWidget</a></b>(widget)
+								</div>
+								<div class="description">Creates the DOM element for a text widget</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#DeleteAnnotation">DeleteAnnotation</a></b>(annotation, imported)
+								</div>
+								<div class="description">Deletes the specified annotation in the managed list of annotations.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#DeleteAnnotations">DeleteAnnotations</a></b>(annotation, imported)
+								</div>
+								<div class="description">Deletes the specified annotations in the managed list of annotations.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#deregisterAnnotationType">deregisterAnnotationType</a></b>(elementName, annotationClass)
+								</div>
+								<div class="description">Deregisters an annotation class.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#DeselectAllAnnotations">DeselectAllAnnotations</a></b>()
+								</div>
+								<div class="description">Deselects all annotations.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#DeselectAnnotation">DeselectAnnotation</a></b>(annotation)
+								</div>
+								<div class="description">Deselects the specified annotation.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#DisableDefaultStickyNotes">DisableDefaultStickyNotes</a></b>()
+								</div>
+								<div class="description">Disables the use of the default sticky notes so that a custom visualization can be used.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#DrawAnnotations">DrawAnnotations</a></b>(pageNumber)
+								</div>
+								<div class="description">Draws all annotations associated with the given page number.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#DrawAnnotationsFromList">DrawAnnotationsFromList</a></b>(annotationList)
+								</div>
+								<div class="description">Draws all the pages associated with the annotations in the list as long the page is visible.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#DrawWidgets">DrawWidgets</a></b>(pageNumber)
+								</div>
+								<div class="description">Draws all annotations associated with the given page number.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#ExportAnnotations">ExportAnnotations</a></b>()
+								</div>
+								<div class="description">Exports all annotations as an XFDF (XML) string</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#FilterAnnotations">FilterAnnotations</a></b>(filterStr)
+								</div>
+								<div class="description">Causes annotations to be filtered based on a filter string on author.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#GetAnnotationCopy">GetAnnotationCopy</a></b>(annotation)
+								</div>
+								<div class="description">Returns a deep copy of the annotation</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#GetAnnotationFromPopup">GetAnnotationFromPopup</a></b>(popup)
+								</div>
+								<div class="description">Gets the annotation associated with the popup object.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#GetAnnotationsList">GetAnnotationsList</a></b>()
+								</div>
+								<div class="description">Gets the list of all annotations managed by the AnnotationManager.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#GetAnnotCommand">GetAnnotCommand</a></b>()
+								</div>
+								<div class="description">Gets an XML string specifying the added, modified and deleted annotations.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#GetCurrentUser">GetCurrentUser</a></b>()
+								</div>
+								<div class="description">Returns the user name of the current user</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#GetIsAdminUser">GetIsAdminUser</a></b>()
+								</div>
+								<div class="description">Returns whether the current user has admin privileges</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#GetMarkupOff">GetMarkupOff</a></b>()
+								</div>
+								<div class="description">Returns whether the viewer currently has annotations toggled off</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#GetReadOnly">GetReadOnly</a></b>()
+								</div>
+								<div class="description">Returns whether the viewer is currently in read-only mode</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#getRegisteredAnnotationTypes">getRegisteredAnnotationTypes</a></b>()
+								</div>
+								<div class="description">Gets a map of registered annotations.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#GetSelectedAnnotations">GetSelectedAnnotations</a></b>()
+								</div>
+								<div class="description">Returns the list of selected annotations.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#GetUseFilter">GetUseFilter</a></b>()
+								</div>
+								<div class="description">Returns whether the viewer is using a filter on annotations to be displayed</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#HasAnnotation">HasAnnotation</a></b>(annotation)
+								</div>
+								<div class="description">Determines if the specified annotation exists in the managed list of annotations</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#HasWidget">HasWidget</a></b>(widget)
+								</div>
+								<div class="description">Determines if the specified widget exists in the managed list of widgets</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#ImportAnnotations">ImportAnnotations</a></b>(xfdfString)
+								</div>
+								<div class="description">Loads XFDF (XML) annotations into the viewer.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#ImportAnnotCommand">ImportAnnotCommand</a></b>(xfdfString)
+								</div>
+								<div class="description">Updates the viewer with the xfdf changes (add/modify/delete) in the xml string</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#IsAnnotationSelected">IsAnnotationSelected</a></b>(annotation)
+								</div>
+								<div class="description">Returns whether an annotation is currently selected</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#JumpToAnnotation">JumpToAnnotation</a></b>(annotation)
+								</div>
+								<div class="description">Jumps to the page of the annotation and if it isn't visible then centers it in the window.</div>
+							</td>
+						</tr>
+					
+						<tr class='deprecated'>
+							<td class="attributes">[deprecated] &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#LoadAnnotations">LoadAnnotations</a></b>(xfdfString)
+								</div>
+								<div class="description">Loads XFDF (XML) annotations into the viewer.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#PasteCopiedAnnotations">PasteCopiedAnnotations</a></b>()
+								</div>
+								<div class="description">Pastes the currently copied annotations.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#RedrawAnnotation">RedrawAnnotation</a></b>(annotation)
+								</div>
+								<div class="description">Causes the specified annotation to be redrawn.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#registerAnnotationType">registerAnnotationType</a></b>(elementName, annotationClass)
+								</div>
+								<div class="description">Registers an annotation class.</div>
+							</td>
+						</tr>
+					
+						<tr class='deprecated'>
+							<td class="attributes">[deprecated] &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#SaveAnnotations">SaveAnnotations</a></b>()
+								</div>
+								<div class="description">Exports all annotations as an XFDF (XML) string</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#SelectAnnotation">SelectAnnotation</a></b>(annotation)
+								</div>
+								<div class="description">Selects the specified annotation.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#SelectAnnotations">SelectAnnotations</a></b>(annotation)
+								</div>
+								<div class="description">Selects the specified annotations.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#SetCurrentUser">SetCurrentUser</a></b>(user)
+								</div>
+								<div class="description">sets the current user of the viewer</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#SetIsAdminUser">SetIsAdminUser</a></b>(isAdminUser)
+								</div>
+								<div class="description">Sets whether the current user is an admin user</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#SetMarkupOff">SetMarkupOff</a></b>(markupOff)
+								</div>
+								<div class="description">Sets whether annotations are toggled off</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#SetPermissionCheckCallback">SetPermissionCheckCallback</a></b>(callback)
+								</div>
+								<div class="description">Sets the function that should be used to determine if the annotation can be modified or not.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#SetReadOnly">SetReadOnly</a></b>(readOnly)
+								</div>
+								<div class="description">Sets whether the viewer is currently in read-only mode</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#SetUseFilter">SetUseFilter</a></b>(useFilter)
+								</div>
+								<div class="description">Sets whether annotations are to be filtered based on author</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#SetWidgetDivCssAttributes">SetWidgetDivCssAttributes</a></b>(widget, $div)
+								</div>
+								<div class="description">Sets the CSS attributes for the div element representing a widget annotation</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#ToggleAnnotations">ToggleAnnotations</a></b>()
+								</div>
+								<div class="description">Toggles annotations on/off.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#UpdateAnnotation">UpdateAnnotation</a></b>(annotation)
+								</div>
+								<div class="description">Updates the specified annotation in the managed list of annotations</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#UpdateCopiedAnnotations">UpdateCopiedAnnotations</a></b>()
+								</div>
+								<div class="description">Copies the currently selected annotations.</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the events documented in the class CoreControls.AnnotationManager.">
+					<caption>Event Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Event Attributes</th>
+							<th scope="col">Event Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#event:annotationChanged">annotationChanged</a></b>(evt, annotation, action)
+								</div>
+								<div class="description">Triggered when an annotation has been changed (added, deleted, modified).</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#event:annotationFiltered">annotationFiltered</a></b>(evt, annotationList)
+								</div>
+								<div class="description">Triggered after the annotations have been filtered.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#event:annotationPopupCreated">annotationPopupCreated</a></b>(evt, annotation, popup)
+								</div>
+								<div class="description">Triggered after an annotation's popup has been created.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#event:annotationSelected">annotationSelected</a></b>(evt, annotationList, action)
+								</div>
+								<div class="description">Triggered after annotation selection has been changed.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#event:annotationToggled">annotationToggled</a></b>(evt, markupOff, annotationList, useFilter)
+								</div>
+								<div class="description">Triggered after annotations have been toggled on/off.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.AnnotationManager.html#event:notify">notify</a></b>(evt, type)
+								</div>
+								<div class="description">Triggered when there is a notification related to annotations.</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Class Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>CoreControls.AnnotationManager</b>(docViewer)
+				</div>
+				
+				<div class="description">
+					Creates a new instance of AnnotationManager.
+					
+				</div>
+				
+				
+				
+				
+					
+						<dl class="detailList">
+						<dt class="heading">Parameters:</dt>
+						
+							<dt>
+								<span class="light fixedFont">{<a href="../symbols/CoreControls.DocumentViewer.html">CoreControls.DocumentViewer</a>}</span>  <b>docViewer</b>
+								
+							</dt>
+								<dd></dd>
+						
+						</dl>
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name="AddAnnotation"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>AddAnnotation</b>(annotation, imported)
+					
+					</div>
+					<div class="description">
+						Adds the specified annotation to the managed list of annotations
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>An instance of Annotation.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>imported</b>
+									
+								</dt>
+								<dd>Whether the annotation was imported from another source or not</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="CanModify"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>CanModify</b>(annotation)
+					
+					</div>
+					<div class="description">
+						Whether or not the current user can modify the annotation.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{object}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>The annotation to check permissions on.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="CreateButtonWidget"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>CreateButtonWidget</b>(widget)
+					
+					</div>
+					<div class="description">
+						Creates the DOM element for a button widget
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.ButtonWidgetAnnotation.html">Annotations.ButtonWidgetAnnotation</a>}</span> <b>widget</b>
+									
+								</dt>
+								<dd>An instance of ButtonWidgetAnnotation.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="CreateChoiceWidget"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>CreateChoiceWidget</b>(widget)
+					
+					</div>
+					<div class="description">
+						Creates the DOM element for a choice widget
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.ChoiceWidgetAnnotation.html">Annotations.ChoiceWidgetAnnotation</a>}</span> <b>widget</b>
+									
+								</dt>
+								<dd>An instance of ChoiceWidgetAnnotation.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="CreateTextWidget"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>CreateTextWidget</b>(widget)
+					
+					</div>
+					<div class="description">
+						Creates the DOM element for a text widget
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.TextWidgetAnnotation.html">Annotations.TextWidgetAnnotation</a>}</span> <b>widget</b>
+									
+								</dt>
+								<dd>An instance of TextWidgetAnnotation.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="DeleteAnnotation"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>DeleteAnnotation</b>(annotation, imported)
+					
+					</div>
+					<div class="description">
+						Deletes the specified annotation in the managed list of annotations.If an annotation is successfully deleted, the annotationChanged event will be fired with a "delete" action.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>An instance of Annotation.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>imported</b>
+									
+								</dt>
+								<dd>Whether the annotation was imported from another source or not</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="DeleteAnnotations"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>DeleteAnnotations</b>(annotation, imported)
+					
+					</div>
+					<div class="description">
+						Deletes the specified annotations in the managed list of annotations.If an annotation is successfully deleted, the annotationChanged event will be fired with a "delete" action.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{array}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>An array of annotations</dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>imported</b>
+									
+								</dt>
+								<dd>Whether the annotation was imported from another source or not</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="deregisterAnnotationType"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{Boolean}</span>
+					<b>deregisterAnnotationType</b>(elementName, annotationClass)
+					
+					</div>
+					<div class="description">
+						Deregisters an annotation class.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>elementName</b>
+									
+								</dt>
+								<dd>the string representing the xml element name of the annotation</dd>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotationClass</b>
+									
+								</dt>
+								<dd>the class (constructor) of the annotation</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> true if deregistration was successful</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="DeselectAllAnnotations"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>DeselectAllAnnotations</b>()
+					
+					</div>
+					<div class="description">
+						Deselects all annotations.If an annotation is successfully deselected then the annotationSelected event will be trigger with a "deselected" action and a null value as the array of annotations parameter.Note: the annotationSelected event has two parameters: an array of annotations and a string value of either "selected" or "deselected"
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="DeselectAnnotation"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>DeselectAnnotation</b>(annotation)
+					
+					</div>
+					<div class="description">
+						Deselects the specified annotation.If an annotation is successfully selected then the annotationSelected event will be fired with a "selected" action.Note: the annotationSelected event has two parameters: an array of annotations and a string value of either "selected" or "deselected"
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>An instance of Annotation.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="DisableDefaultStickyNotes"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>DisableDefaultStickyNotes</b>()
+					
+					</div>
+					<div class="description">
+						Disables the use of the default sticky notes so that a custom visualization can be used.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="DrawAnnotations"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>DrawAnnotations</b>(pageNumber)
+					
+					</div>
+					<div class="description">
+						Draws all annotations associated with the given page number.Note that the entire annotation canvas for the page will be redrawn.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>pageNumber</b>
+									
+								</dt>
+								<dd>The page number for the page to draw.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="DrawAnnotationsFromList"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>DrawAnnotationsFromList</b>(annotationList)
+					
+					</div>
+					<div class="description">
+						Draws all the pages associated with the annotations in the list as long the page is visible.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{array}</span> <b>annotationList</b>
+									
+								</dt>
+								<dd>List of annotations</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="DrawWidgets"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>DrawWidgets</b>(pageNumber)
+					
+					</div>
+					<div class="description">
+						Draws all annotations associated with the given page number.Note that the entire annotation canvas for the page will be redrawn.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>pageNumber</b>
+									
+								</dt>
+								<dd>The page number for the page to draw.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="ExportAnnotations"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{string}</span>
+					<b>ExportAnnotations</b>()
+					
+					</div>
+					<div class="description">
+						Exports all annotations as an XFDF (XML) string
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{string}</span> The XFDF (XML) annotations as a string</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="FilterAnnotations"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>FilterAnnotations</b>(filterStr)
+					
+					</div>
+					<div class="description">
+						Causes annotations to be filtered based on a filter string on author.Only annotations by the specified author will get displayed on the document.Note that filtered annotations are not deleted, they are just not visible.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>filterStr</b>
+									
+								</dt>
+								<dd>an author name</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetAnnotationCopy"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span>
+					<b>GetAnnotationCopy</b>(annotation)
+					
+					</div>
+					<div class="description">
+						Returns a deep copy of the annotation
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>An instance of Annotation to be copied.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> a copy of the annotation, null if annotation cannot be copied</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetAnnotationFromPopup"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span>
+					<b>GetAnnotationFromPopup</b>(popup)
+					
+					</div>
+					<div class="description">
+						Gets the annotation associated with the popup object.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{object}</span> <b>popup</b>
+									
+								</dt>
+								<dd>The popup object associated with an annotation</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> The annotation that the popup belongs to</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetAnnotationsList"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>[]}</span>
+					<b>GetAnnotationsList</b>()
+					
+					</div>
+					<div class="description">
+						Gets the list of all annotations managed by the AnnotationManager.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>[]}</span> An array of Annotations.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetAnnotCommand"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{string}</span>
+					<b>GetAnnotCommand</b>()
+					
+					</div>
+					<div class="description">
+						Gets an XML string specifying the added, modified and deleted annotations.Added and modified annotations will have their XFDF representation includedwhile deleted annotations will only include their id.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{string}</span> The command string</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetCurrentUser"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{string}</span>
+					<b>GetCurrentUser</b>()
+					
+					</div>
+					<div class="description">
+						Returns the user name of the current user
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{string}</span> the user name of the current user</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetIsAdminUser"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{boolean}</span>
+					<b>GetIsAdminUser</b>()
+					
+					</div>
+					<div class="description">
+						Returns whether the current user has admin privileges
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> true if the current user is an admin, false otherwise</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetMarkupOff"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{boolean}</span>
+					<b>GetMarkupOff</b>()
+					
+					</div>
+					<div class="description">
+						Returns whether the viewer currently has annotations toggled off
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> true if annots are currently toggled off, false otherwise</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetReadOnly"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{boolean}</span>
+					<b>GetReadOnly</b>()
+					
+					</div>
+					<div class="description">
+						Returns whether the viewer is currently in read-only mode
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> true if the current viewer is in read-only mode, false otherwise</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getRegisteredAnnotationTypes"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{object}</span>
+					<b>getRegisteredAnnotationTypes</b>()
+					
+					</div>
+					<div class="description">
+						Gets a map of registered annotations. This can be modified directly, instead of using AnnotationManager#registerAnnotationType and AnnotationManager#deregisterAnnotationType.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{object}</span> a JavaScript object containing a key-value map, where the key is the annotation element name and the value is an array of Annotation classes.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetSelectedAnnotations"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>[]}</span>
+					<b>GetSelectedAnnotations</b>()
+					
+					</div>
+					<div class="description">
+						Returns the list of selected annotations.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>[]}</span> An array of selected annotations.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetUseFilter"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{boolean}</span>
+					<b>GetUseFilter</b>()
+					
+					</div>
+					<div class="description">
+						Returns whether the viewer is using a filter on annotations to be displayed
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> true if annots are currently filtered, false otherwise</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="HasAnnotation"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>HasAnnotation</b>(annotation)
+					
+					</div>
+					<div class="description">
+						Determines if the specified annotation exists in the managed list of annotations
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>An instance of Annotation.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="HasWidget"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>HasWidget</b>(widget)
+					
+					</div>
+					<div class="description">
+						Determines if the specified widget exists in the managed list of widgets
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.WidgetAnnotation.html">Annotations.WidgetAnnotation</a>}</span> <b>widget</b>
+									
+								</dt>
+								<dd>An instance of WidgetAnnotation.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="ImportAnnotations"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>ImportAnnotations</b>(xfdfString)
+					
+					</div>
+					<div class="description">
+						Loads XFDF (XML) annotations into the viewer.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>xfdfString</b>
+									
+								</dt>
+								<dd>The XFDF (XML) annotations as a string</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="ImportAnnotCommand"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{array}</span>
+					<b>ImportAnnotCommand</b>(xfdfString)
+					
+					</div>
+					<div class="description">
+						Updates the viewer with the xfdf changes (add/modify/delete) in the xml string
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>xfdfString</b>
+									
+								</dt>
+								<dd>The XML annotation updates as a string</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{array}</span> The list of annotations that were updated</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="IsAnnotationSelected"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{boolean}</span>
+					<b>IsAnnotationSelected</b>(annotation)
+					
+					</div>
+					<div class="description">
+						Returns whether an annotation is currently selected
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>An instance of Annotation.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> true if annotation is selected, false otherwise</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="JumpToAnnotation"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>JumpToAnnotation</b>(annotation)
+					
+					</div>
+					<div class="description">
+						Jumps to the page of the annotation and if it isn't visible then centers it in the window.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>The annotation to be jumped to.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="LoadAnnotations"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>LoadAnnotations</b>(xfdfString)
+					
+					</div>
+					<div class="description">
+						Loads XFDF (XML) annotations into the viewer.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>xfdfString</b>
+									
+								</dt>
+								<dd>The XFDF (XML) annotations as a string</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Deprecated:</dt>
+							<dt>
+								Use ImportAnnotations instead
+							</dt>
+							</dl>
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="PasteCopiedAnnotations"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>PasteCopiedAnnotations</b>()
+					
+					</div>
+					<div class="description">
+						Pastes the currently copied annotations.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="RedrawAnnotation"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>RedrawAnnotation</b>(annotation)
+					
+					</div>
+					<div class="description">
+						Causes the specified annotation to be redrawn.Note that the entire annotation canvas for the page will be redrawn.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>The annotation to be redrawn.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="registerAnnotationType"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{Boolean}</span>
+					<b>registerAnnotationType</b>(elementName, annotationClass)
+					
+					</div>
+					<div class="description">
+						Registers an annotation class. Annotations that are registered will be serialized and deserialized by the AnnotationManager.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>elementName</b>
+									
+								</dt>
+								<dd>the string representing the xml element name of the annotation</dd>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotationClass</b>
+									
+								</dt>
+								<dd>the class (constructor) of the annotation</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> true if registration was successful</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="SaveAnnotations"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{string}</span>
+					<b>SaveAnnotations</b>()
+					
+					</div>
+					<div class="description">
+						Exports all annotations as an XFDF (XML) string
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Deprecated:</dt>
+							<dt>
+								Use ExportAnnotations instead
+							</dt>
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{string}</span> The XFDF (XML) annotations as a string</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="SelectAnnotation"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>SelectAnnotation</b>(annotation)
+					
+					</div>
+					<div class="description">
+						Selects the specified annotation.If an annotation is successfully selected then the annotationSelected event will be fired with a "selected" action.Note: the annotationSelected event has two parameters: an array of annotations and a string value of either "selected" or "deselected"
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>An instance of Annotation.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="SelectAnnotations"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>SelectAnnotations</b>(annotation)
+					
+					</div>
+					<div class="description">
+						Selects the specified annotations.If an annotation is successfully selected then the annotationSelected event will be fired with a "selected" action.Note: the annotationSelected event has two parameters: an array of annotations and a string value of either "selected" or "deselected"
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>[]}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>An array of Annotations.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="SetCurrentUser"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>SetCurrentUser</b>(user)
+					
+					</div>
+					<div class="description">
+						sets the current user of the viewer
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>user</b>
+									
+								</dt>
+								<dd>the user name of the current user</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="SetIsAdminUser"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>SetIsAdminUser</b>(isAdminUser)
+					
+					</div>
+					<div class="description">
+						Sets whether the current user is an admin user
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>isAdminUser</b>
+									
+								</dt>
+								<dd>true if the current user is an admin, false otherwise</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="SetMarkupOff"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>SetMarkupOff</b>(markupOff)
+					
+					</div>
+					<div class="description">
+						Sets whether annotations are toggled off
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>markupOff</b>
+									
+								</dt>
+								<dd>true if the annotations are toggled off, false otherwise</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="SetPermissionCheckCallback"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>SetPermissionCheckCallback</b>(callback)
+					
+					</div>
+					<div class="description">
+						Sets the function that should be used to determine if the annotation can be modified or not.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{function}</span> <b>callback</b>
+									
+								</dt>
+								<dd>The function that should be called.  Should return true or false.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="SetReadOnly"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>SetReadOnly</b>(readOnly)
+					
+					</div>
+					<div class="description">
+						Sets whether the viewer is currently in read-only mode
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>readOnly</b>
+									
+								</dt>
+								<dd>true if the viewer is in read-only mode, false otherwise</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="SetUseFilter"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>SetUseFilter</b>(useFilter)
+					
+					</div>
+					<div class="description">
+						Sets whether annotations are to be filtered based on author
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>useFilter</b>
+									
+								</dt>
+								<dd>true if the annotations are to be filtered, false otherwise</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="SetWidgetDivCssAttributes"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>SetWidgetDivCssAttributes</b>(widget, $div)
+					
+					</div>
+					<div class="description">
+						Sets the CSS attributes for the div element representing a widget annotation
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.WidgetAnnotation.html">Annotations.WidgetAnnotation</a>}</span> <b>widget</b>
+									
+								</dt>
+								<dd>An instance of WidgetAnnotation.</dd>
+							
+								<dt>
+									<b>$div</b>
+									
+								</dt>
+								<dd>The div element representing the widget.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="ToggleAnnotations"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>ToggleAnnotations</b>()
+					
+					</div>
+					<div class="description">
+						Toggles annotations on/off.i.e. Show all annotations or hide all annotations.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="UpdateAnnotation"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>UpdateAnnotation</b>(annotation)
+					
+					</div>
+					<div class="description">
+						Updates the specified annotation in the managed list of annotations
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Annotations.Annotation.html">Annotations.Annotation</a>}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>An instance of Annotation.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="UpdateCopiedAnnotations"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>UpdateCopiedAnnotations</b>()
+					
+					</div>
+					<div class="description">
+						Copies the currently selected annotations.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+				<div class="sectionTitle">
+					Event Detail
+				</div>
+				
+					<a name="event:annotationChanged"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>annotationChanged</b>(evt, annotation, action)
+					
+					</div>
+					<div class="description">
+						Triggered when an annotation has been changed (added, deleted, modified).Attach like annotManager.on('annotationChanged', callback)
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{object}</span> <b>evt</b>
+									
+								</dt>
+								<dd>Event object</dd>
+							
+								<dt>
+									<span class="light fixedFont">{object}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>The annotation that was changed</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>action</b>
+									
+								</dt>
+								<dd>The action that occurred (add, delete, modify)</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="event:annotationFiltered"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>annotationFiltered</b>(evt, annotationList)
+					
+					</div>
+					<div class="description">
+						Triggered after the annotations have been filtered.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{object}</span> <b>evt</b>
+									
+								</dt>
+								<dd>Event object</dd>
+							
+								<dt>
+									<span class="light fixedFont">{array}</span> <b>annotationList</b>
+									
+								</dt>
+								<dd>List of all annotations</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="event:annotationPopupCreated"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>annotationPopupCreated</b>(evt, annotation, popup)
+					
+					</div>
+					<div class="description">
+						Triggered after an annotation's popup has been created.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{object}</span> <b>evt</b>
+									
+								</dt>
+								<dd>Event object</dd>
+							
+								<dt>
+									<span class="light fixedFont">{object}</span> <b>annotation</b>
+									
+								</dt>
+								<dd>The annotation that the popup belongs to</dd>
+							
+								<dt>
+									<span class="light fixedFont">{object}</span> <b>popup</b>
+									
+								</dt>
+								<dd>The popup element</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="event:annotationSelected"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>annotationSelected</b>(evt, annotationList, action)
+					
+					</div>
+					<div class="description">
+						Triggered after annotation selection has been changed.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{object}</span> <b>evt</b>
+									
+								</dt>
+								<dd>Event object</dd>
+							
+								<dt>
+									<span class="light fixedFont">{array}</span> <b>annotationList</b>
+									
+								</dt>
+								<dd>List of annotations that have selected or deselected</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>action</b>
+									
+								</dt>
+								<dd>Either 'selected' or 'deselected'</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="event:annotationToggled"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>annotationToggled</b>(evt, markupOff, annotationList, useFilter)
+					
+					</div>
+					<div class="description">
+						Triggered after annotations have been toggled on/off.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{object}</span> <b>evt</b>
+									
+								</dt>
+								<dd>Event object</dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>markupOff</b>
+									
+								</dt>
+								<dd>Whether the annotations are visible or not</dd>
+							
+								<dt>
+									<span class="light fixedFont">{array}</span> <b>annotationList</b>
+									
+								</dt>
+								<dd>List of all annotations</dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>useFilter</b>
+									
+								</dt>
+								<dd>Whether a filter is being used or not</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="event:notify"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>notify</b>(evt, type)
+					
+					</div>
+					<div class="description">
+						Triggered when there is a notification related to annotations.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{object}</span> <b>evt</b>
+									
+								</dt>
+								<dd>Event object</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>type</b>
+									
+								</dt>
+								<dd>The type of notification that has occurred</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					
+				
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Mon Mar 24 2014 16:42:00 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

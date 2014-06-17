@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+<fields />
+<annots><highlight subject="annotations.types.highlight" page="0" rect="106.785027,722.070181,165.750041,710.962678" name="67cc14ef-3777-7716-0be8-a75f6d20d773" title="cchen" date="D:20140612115334+08'00'" color="#FFFF00" opacity="0.25" creationdate="D:20140612115334+08'00'" coords="106.785027,722.070181,165.750041,722.070181,106.785027,710.962678,165.750041,710.962678"><popup flags="print,nozoom,norotate" page="0" rect="0,841.92021,120.00003,781.920195" open="no"/></highlight></annots>
+<pages>
+<defmtx matrix="1.333333,0,0,-1.333333,0,1122.56" />
+</pages>
+</xfdf>

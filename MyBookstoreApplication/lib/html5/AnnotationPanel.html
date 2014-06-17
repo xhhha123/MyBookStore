@@ -1,0 +1,240 @@
+<style>
+    .annotationPanel{
+        /* padding:5px;        */
+        margin:6px auto;
+    }
+    /* .annotationPanel h3{
+        background: lightgoldenrodyellow;
+        border: 1px solid grey;
+        padding:4px;
+        cursor: default;
+    } */
+    .annotationPanel h3, .annotationPanel h4, .annotationPanel ul{
+        margin: 0;
+    }   
+    #annot-head{
+        /*border: 1px solid silver;*/
+
+    }
+    #annotationList { 
+        list-style-type: none; margin: 0; padding: 0; 
+        height:100%;
+    }
+    /*#annotationList .ui-selected { background: lightblue; color: white; }*/
+    #annotationList li { 
+        border: none !important;
+        /*margin: 3px;
+                
+                font-size: 1em; 
+                height: 25px; 
+        border: 1px solid silver;
+        background: white;
+        cursor:pointer; */
+    }
+
+    /*.ui-selected .annotListItem, #toolModePicker .ui-selected  {*/
+    .annotationPanel * .ui-selected{
+        /*        background: #CBE6EF; */
+        /*color: white; */
+    }
+
+    /*    .annotListItem  .ui-selected .ui-widget-content{
+            background: #CBE6EF; 
+        }*/
+
+
+
+    .annotListItem{
+        padding: 5px 3px;
+        border-style: solid;
+        border-color: silver;
+        border-width: 0 0 1px 0 !important;
+        cursor:pointer;
+    }
+    .annotListItem .subject{
+        min-width:120px;
+        display : inline-block;
+        font-weight: bold;
+    }
+    .annotListItem .page{
+        display : inline-block;
+    }
+    .annotListItem .comment{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-style: italic;
+    }
+    #toolModePicker{
+        padding:5px;
+    }
+    #toolModePicker li{
+        display: inline-block;
+        border: 1px solid #aaa;
+    }
+    #toolModePicker li img{
+        width:22px;
+        height:22px;
+        cursor: pointer;
+    }
+    .colorPicker{
+        border: 1px dimgray solid;
+        background:white;
+        padding:1px 0;
+        line-height: 0;
+        cursor: pointer;
+    }
+    .colorPicker li{
+        display: inline-block;
+        list-style-type: none;
+        padding: 2px;
+        border: none !important;
+    }
+    .colorPicker li div{
+        width: 10px;
+        height: 10px;
+        border: 1px dimgray solid;
+    }
+    #annotationListHeader{
+        border-style: solid;
+        border-color: silver;
+        border-width: 1px 1px 0px 1px;
+        background-color: #eee;
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(0.0, #ddd), color-stop(1.0, #fff));
+        background: -webkit-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+        background: -moz-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+        background: -ms-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+        background: -o-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+    }
+    #annotationProperties{
+        border: 1px solid silver;
+        padding: 2px;
+    }
+    #annotationProperties h4{
+        margin-top:5px;
+    }
+    #thicknessSlider{
+        /*        width:90%;*/
+        margin: 2px 5px;
+        /*        background: none;*/
+    }
+    #annotationProperties button{
+        width:100%;
+        margin: 4px 0;
+    }
+    #annotationListScroll {
+        border: 1px solid silver;
+        /*        background:white;*/
+        overflow-y: auto; 
+        overflow-x: hidden;
+    }
+    #annot-foot {
+        margin: 4px 0 10px 0;
+    }
+
+    /* JQUERY UI STYLE OVERRIDES */
+    .ui-icon-custom-annot-line{
+        background-image: url('Resources/annot/annot_line.png') !important;
+    }            
+    .ui-icon-cancel-small{
+        background-position: -3px -131px;
+    }
+    .ui-tabs .ui-tabs-nav li.ui-tabs-selected a{
+        cursor:pointer;
+    }
+</style>
+<script type="text/javascript" src="AnnotationPanel.js"></script>
+<div class="annotationPanel">
+    <div id="annot-head">
+        <!--
+        <span class="ui-ele ui-label" style="vertical-align:middle">Annotations Off</span>
+        <input id="annotationsOff" title="Annotations Off" type="checkbox"> -->
+        <ul id="toolModePicker" >
+            <li id="annot-button-edit" data-toolmode="AnnotationEdit" data-i18n="[title]sidepanel.annotationTab.tooltips.edit">
+                <img src="Resources/annot/annot_edit.png"/>
+            </li>
+            <li  id="annot-button-sticky" data-toolmode="AnnotationCreateSticky" data-i18n="[title]sidepanel.annotationTab.tooltips.stickyNote">
+                <img src="Resources/annot/annot_sticky_note.png"/>
+            </li>
+            <li  id="annot-button-highlight" data-toolmode="AnnotationCreateTextHighlight" 
+                 data-i18n="[title]sidepanel.annotationTab.tooltips.highlight">
+                <img src="Resources/annot/annot_highlight.png"/></li>
+            <li id="annot-button-underline" data-toolmode="AnnotationCreateTextUnderline" data-i18n="[title]sidepanel.annotationTab.tooltips.underline">
+                <img  src="Resources/annot/annot_underline.png"/>
+            </li>
+            <li id="annot-button-strikeout" data-toolmode="AnnotationCreateTextStrikeout" data-i18n="[title]sidepanel.annotationTab.tooltips.strikeout">
+                <img  src="Resources/annot/annot_strikethrough.png"/>
+            </li>
+            <li  id="annot-button-rectangle" data-toolmode="AnnotationCreateRectangle" data-i18n="[title]sidepanel.annotationTab.tooltips.rectangle">
+                <img src="Resources/annot/annot_rectangle.png"/></li>
+            <li  id="annot-button-ellipse" data-toolmode="AnnotationCreateEllipse" data-i18n="[title]sidepanel.annotationTab.tooltips.ellipse">
+                <img src="Resources/annot/annot_ellipse.png"/></li>
+            <li  id="annot-button-line" data-toolmode="AnnotationCreateLine" data-i18n="[title]sidepanel.annotationTab.tooltips.line">
+                <img src="Resources/annot/annot_line.png"/></li>
+            <li id="annot-button-freehand" data-toolmode="AnnotationCreateFreeHand" data-i18n="[title]sidepanel.annotationTab.tooltips.freeHand">
+                <img  src="Resources/annot/annot_paintbrush.png"/>
+            </li>
+            <li id="annot-button-polyline" data-toolmode="AnnotationCreatePolyline" data-i18n="[title]sidepanel.annotationTab.tooltips.polyline">
+                <img src="Resources/annot/annot_polyline.png"/>
+            </li> 
+            <li id="annot-button-polygon" data-toolmode="AnnotationCreatePolygon" data-i18n="[title]sidepanel.annotationTab.tooltips.polygon">
+                <img src="Resources/annot/annot_polygon.png"/>
+            </li>  
+            <li id="annot-button-callout" data-toolmode="AnnotationCreateCallout" data-i18n="[title]sidepanel.annotationTab.tooltips.callout">
+                <img src="Resources/annot/annot_callout.png"/>
+            </li> 
+        </ul>
+    </div>
+    <div id="annot-content">
+        <div id="annotationListHeader">
+            <button type="button" id="toggleAnnotationsButton" style="float:left" data-i18n="sidepanel.annotationTab.buttonHide;[title]sidepanel.annotationTab.toggleAnnotations"></button>
+            <button type="button" id="saveAnnotationsButton" style="float:right" data-i18n="sidepanel.annotationTab.buttonSave;[title]sidepanel.annotationTab.saveAnnotations"></button>
+            <!-- comment out filter box for now
+            <input id="filterBox" title="Filter" class="ui-ele toolbar-input-text" type=text name=filter style="width: 80px; margin-right:2px;" />
+            <span class="ui-ele ui-label" style="vertical-align:middle">Filter:</span> -->
+            <div style="clear:both;"></div>
+        </div>
+        <div id="annotationListScroll" >
+            <ul id="annotationList">
+            </ul>
+        </div>
+
+    </div>
+    <div id="annot-foot">
+        <div id="annotationProperties" style="display:none">
+            <div id="fillColorPicker">
+                <h4 data-i18n="sidepanel.annotationTab.fill"></h4>
+                <ul class="colorPicker">
+                    <li data-color="red"></li>
+                    <li data-color="orange"></li>
+                    <li data-color="yellow"></li>
+                    <li data-color="lightgreen"></li>
+                    <li data-color="green"></li>
+                    <li data-color="blue"></li>
+                    <li data-color="black"></li>
+                    <li data-color="white"></li>
+                    <li data-color="transparent"></li>
+                </ul>
+            </div>
+            <div id="strokeColorPicker">
+                <h4 data-i18n="sidepanel.annotationTab.stroke"></h4>
+                <ul class="colorPicker">
+                    <li data-color="red"></li>
+                    <li data-color="orange"></li>
+                    <li data-color="yellow"></li>
+                    <li data-color="lightgreen"></li>
+                    <li data-color="green"></li>
+                    <li data-color="blue"></li>
+                    <li data-color="black"></li>
+                    <li data-color="white"></li>
+                </ul>
+            </div>
+            <div id="thicknessPicker">
+                <h4 data-i18n="sidepanel.annotationTab.thickness"></h4>
+                <div id="thicknessSlider"></div>  
+            </div>
+            <button type="button" id="defaultButton" data-i18n="sidepanel.annotationTab.setAsDefault"></button>
+        </div>
+    </div>
+</div>
+

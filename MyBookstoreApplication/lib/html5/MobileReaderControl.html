@@ -1,0 +1,502 @@
+<!doctype html>
+<html>
+    <head>
+
+        <title>Mobile WebViewer</title>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <script>
+            
+            // When ready...
+            /*http://24ways.org/2011/raising-the-bar-on-mobile*/
+            (function(win) {
+
+                var doc = win.document;
+                // If there's a hash, or addEventListener is undefined, stop here
+                if (!location.hash && win.addEventListener) {
+                    //scroll to 1
+                    window.scrollTo(0, 1);
+                    var scrollTop = 1,
+                        getScrollTop = function() {
+                            return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
+                        },
+                        //reset to 0 on bodyready, if needed
+                        bodycheck = setInterval(function() {
+                            if (doc.body) {
+                                clearInterval(bodycheck);
+                                scrollTop = getScrollTop();
+                                win.scrollTo(0, scrollTop === 1 ? 0 : 1);
+                            }
+                        }, 15);
+                    win.addEventListener("load", function() {
+                        setTimeout(function() {
+                            //reset to hide addr bar at onload
+                            win.scrollTo(0, scrollTop === 1 ? 0 : 1);
+                        }, 0);
+                    });
+                }
+            })(this);
+        </script>
+        <style>
+
+            .hacc {  
+                -webkit-backface-visibility: hidden;
+                -webkit-perspective: 1000px;
+            }
+
+            * { 
+                margin:0;
+            }
+
+            body {
+                width:100%;
+                height:100%;
+                margin:0;
+            }
+            
+            html {
+                width:100%;
+                height:100%;
+                -webkit-user-select: none;
+                -ms-touch-action: none;
+                touch-action: none;
+            }
+
+            img, canvas {
+                left: 0px;
+            }
+            
+            #pageHeader .ui-selected, #colorMenu .ui-selected {
+                background: lightblue;
+                color: white;
+            }
+            
+            #annotEditPopup [data-role="controlgroup"] {
+                margin: 0;
+            }
+            
+            .colorPicker {
+                border: 1px dimgray solid;
+                background: white;
+                padding: 1px 0;
+                line-height: 0;
+            }
+            
+            .colorPicker li {
+                display: inline-block;
+                padding: 2px;
+            }
+            
+            .colorPicker li div {
+                width: 18px;
+                height: 18px;
+                border: 1px dimgray solid;
+            }
+            
+            #thicknessMenu {
+                width: 200px;
+                margin: 2px 5px;
+            }
+            
+            .doneButton {
+                text-align: center;
+            }
+            
+            #wrapper {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                /* REVISIT*/
+                /* margin-bottom: -35px;*/
+            }
+
+            #viewer {
+                visibility: hidden;
+                position: relative;
+                left: 0;
+                z-index: 100;
+            }
+
+            #viewerWrapper {
+                position: fixed;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: 1;
+            }
+
+            #viewerPage {
+                display: inline; /* this makes the viewer show under popup menu */
+                background: #929292;
+            }
+
+            .animated {                
+                transition: all 0.4s ease-out 0s;
+                -moz-transition: all 0.4s ease-out 0s;
+                -webkit-transition: all 0.4s ease-out 0s;
+                -ms-transition: all 0.4s ease-out 0s;
+            }
+
+            #menuWrapper {
+                width: 100%;
+                position: absolute;
+                z-index: 9999;
+
+            }
+            
+            #thumbContainer {
+                width: 150px;
+                height: 133px;
+            }
+
+            #preview {
+                background: white;
+                border-top: 4px solid #000000;
+                border-left: 4px solid #000000;
+                border-right: 4px solid #000000;
+                position: fixed;
+                width: 120px;
+                height: 150px;
+                bottom: 45px;
+                opacity: 0;
+                -webkit-transition:opacity .4s linear;
+                -moz-transition:opacity .4s linear;
+                -o-transition:opacity .4s linear;
+                z-index: 0;
+            }
+
+            #textdiv {
+                color: white;
+                height: 17px;
+                background: #000;
+                text-align: center;
+                font-size: 10pt;
+            }
+
+            .pageContainer{
+                left: 0px;
+                top: 0px;
+                position: absolute;
+            }
+
+            .pageContainer span.link {
+                position: absolute;
+                cursor: pointer;
+                z-index: 40;
+                background-color: rgba(255, 0, 255, 0); /* for IE*/
+            }
+
+            .pageContainer span.link:active {
+                border: 2px solid #33CCFF;   
+            }
+
+            #pageIndicatorWrapper {
+                position: absolute;
+                padding: 3px;
+                z-index: 9999;
+                width: 3em;
+            }
+            
+            #pageIndicator {
+                text-align: center;
+            }
+            
+            .loading {
+                background:url(external/images/loading.gif) no-repeat center center;   
+            }
+        </style>
+
+        
+        <link rel="stylesheet" href="external/jquery.mobile/jquery.mobile-1.3.2.min.css" />
+        <script src="external/jquery-1.8.2.min.js"></script>
+        <script>
+            $(document).bind("mobileinit", function() {
+                // so that parameters can be passed after the '#'
+                $.mobile.hashListeningEnabled = false;
+                // so that buttons don't get stuck in an active state
+                $.mobile.activeBtnClass = 'unused';
+            });
+        </script>
+        <script src="external/jquery.mobile/jquery.mobile-1.3.2.min.js"></script>
+
+        
+
+        <script src="CoreControls.js"></script>
+        <script src="external/jquery.doubletap.js"></script>
+        <script src="external/fastclick.js"></script>
+        <script src="external/touchr.js"></script>
+        <script src="WebViewerInterface.js"></script>
+        <script src="ControlUtils.js"></script>
+        <script src="MobileReaderControl.js"></script>
+        <script src="ReaderControlConfig.js"></script>
+        <link rel="stylesheet" href="external/custom.css" />
+
+        <!-- style override -->
+        <style>
+            /* shift the thickness slider to the left */
+            #thicknessMenu div.ui-slider-track, #sliderWrapper div.ui-slider-track {
+                margin-left: 15px;
+            }
+
+            .ui-slider-input {
+                visibility: hidden;
+                position: absolute;
+            }
+
+            .progress-bar .ui-slider-handle {
+                display: none;
+            }
+
+            .progress-bar .ui-slider-track {
+                margin: 0;
+            }
+
+            /* shift the up and down buttons to the right on the page indicator */
+            #pageIndicatorWrapper div.ui-input-text {
+                padding-right: 5px;
+            }
+            
+            /* remove the margin around the textarea in the popup */
+            #noteMenu textarea.ui-input-text {
+                margin: 0;
+            }
+
+            /* listview (bookmark) item padding */
+            .ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
+                padding: .3em 30px .3em 15px;
+            }
+
+            .ui-page-header-fixed { 
+                padding-top: 4.5em;
+            }
+
+            /* make inactive pages have a lower opacity */
+            .ui-page {
+                opacity: 0.2;
+            }
+            
+            .ui-page-active {
+                opacity: 1.0;
+            }
+
+            /* align the search box with the buttons */
+            #searchMenuContext .ui-input-search.ui-mini {
+                margin: 0.5em 0;
+            }
+
+            #offlineOptions .ui-btn {
+                margin: 0;
+            }
+
+            .custom-dialog .ui-content {
+                height: 100%;
+                padding: 0px;
+                -webkit-overflow-scrolling: touch;
+                -ms-touch-action: pan-y;
+                touch-action: pan-y;
+                -ms-overflow-style: -ms-autohiding-scrollbar;
+            }
+
+            .custom-dialog .content {
+                padding: 15px;
+            }
+
+            .ui-dialog .ui-dialog-contain {
+                margin: 0 0 0 auto;
+                top: 0px;
+                right: 0px;
+                position: absolute;
+                height: 100%;
+                z-index: 1;
+            }
+
+            .dialogOverlay {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 100%;
+                width: 100%;
+                background-color: white;
+                opacity: 0.01;
+            }
+        </style>
+    </head>
+
+    <body style="background: #929292">
+        <div data-role="page" id="viewerPage" data-theme="d">
+
+            <div id="wrapper">
+                <div id="viewerWrapper">
+                    <div id="viewer">
+                    </div>
+                </div>
+                <div id="preview">
+                    <div id="thumbContainer"></div>
+                    <div id="textdiv"></div> 
+                </div>
+            </div>
+            
+            <div data-role="header" id="pageHeader" data-fullscreen="true" data-position="fixed" data-visible-on-page-show="false" data-theme="d">
+                
+                <div id="pageIndicatorWrapper">
+                    <form id="pageIndicatorForm">
+                        <input type="number" id="pageIndicator" data-mini="true" min="1" value="1"  autocomplete="off"/>
+                    </form>
+                </div>
+                
+                <div id="defaultMenuContext" data-role="controlgroup" data-type="horizontal" style="float:right">
+                    <a href="#bookmarkDialog" id="bookmarkButton" data-role="button" data-rel="dialog" data-transition="none" data-mini="true" data-iconpos="notext" data-icon="custom-bookmark ui-custom-button"></a>
+                    <a data-mini="true" id="searchButton" data-role="button" data-iconpos="notext" data-icon="custom-search ui-custom-button"></a>
+                    <a style="display:none" data-mini="true" id="annotCreateButton" data-role="button" data-icon="custom-annot ui-custom-button" data-iconpos="notext"></a>
+                    <a href="#optionsDialog" data-role="button" data-rel="dialog" data-transition="none" data-mini="true" id="optionsButton" data-icon="custom-options ui-custom-button" data-iconpos="notext"></a>
+                </div>
+                
+                <div id="searchMenuContext" style="float:right; display:none">
+                    <form id="searchForm"  style="float:left" >
+                        <input data-inline="true" value="" type="search" name="search" autocapitalize="off" id="searchInput" data-mini="true"/>
+                    </form>
+                    
+                    <div data-role="controlgroup" data-type="horizontal" style="float:right">
+                        <a data-mini="true" id="searchLeftButton" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+                        <a data-mini="true" id="searchRightButton" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a>
+                        <a data-mini="true" id="searchCancelButton" data-role="button" data-icon="back" data-iconpos="notext"></a>
+                    </div>
+                </div>
+                
+                <div id="annotCreateMenuContext" data-role="controlgroup" data-type="horizontal" style="float:right; display:none">
+                    <a data-mini="true" id="editAnnotButton" data-role="button" data-icon="custom-edit ui-custom-button" data-iconpos="notext"></a>
+                    <a data-mini="true" id="createStickyButton" data-role="button" data-icon="custom-sticky ui-custom-button" data-iconpos="notext"></a>
+                    <a data-mini="true" id="createHighlightButton" data-role="button" data-icon="custom-highlight ui-custom-button" data-iconpos="notext"></a>
+                    <a data-mini="true" id="createUnderlineButton" data-role="button" data-icon="custom-underline ui-custom-button" data-iconpos="notext"></a>
+                    <a data-mini="true" id="createStrikeoutButton" data-role="button" data-icon="custom-strikeout ui-custom-button" data-iconpos="notext"></a>
+                    <a data-mini="true" id="createRectangleButton" data-role="button" data-icon="custom-rectangle ui-custom-button" data-iconpos="notext"></a>
+                    <a data-mini="true" id="createEllipseButton" data-role="button" data-icon="custom-ellipse ui-custom-button" data-iconpos="notext"></a>
+                    <a data-mini="true" id="createLineButton" data-role="button" data-icon="custom-line ui-custom-button" data-iconpos="notext"></a>
+                    <a data-mini="true" id="createFreehandButton" data-role="button" data-icon="custom-freehand ui-custom-button" data-iconpos="notext"></a>
+                    <a data-mini="true" id="saveAnnotationsButton" data-role="button" data-icon="custom-save ui-custom-button" data-iconpos="notext"></a>
+                    <a data-mini="true" id="textSelectButton" data-role="button" data-icon="custom-text-select ui-custom-button" data-iconpos="notext"></a>
+                    <a data-mini="true" id="annotCreateCancelButton" data-role="button" data-icon="back" data-iconpos="notext"></a>
+                </div>
+            </div>
+            
+            <div data-role="footer" data-fullscreen="true" data-position="fixed" data-visible-on-page-show="false" data-theme="d">
+                <div id="sliderWrapper">
+                    <input data-mini="true" type="range" name="slider" id="slider" value="1" min="1" step="1" max="5001"/>
+                </div>
+            </div>
+
+            <div data-role="popup" data-history="false" data-theme="b" id="annotEditPopup">
+                <div data-role="controlgroup" data-type="horizontal" id="annotEditButtons">
+                    <a data-mini="true" id="editDoneButton" data-role="button"><span data-i18n="mobile.annotationPopup.buttonDone"></span></a>
+                    <a data-mini="true" id="editDeleteButton" data-role="button"><span data-i18n="mobile.annotationPopup.buttonDelete"></span></a>
+                    <a data-mini="true" id="editNoteButton" data-role="button"><span data-i18n="mobile.annotationPopup.buttonNote"></span></a>
+                    <a data-mini="true" id="editStrokeColorButton" data-role="button"><span data-i18n="mobile.annotationPopup.buttonStroke"></span></a>
+                    <a data-mini="true" id="editFillColorButton" data-role="button"><span data-i18n="mobile.annotationPopup.buttonFill"></span></a>
+                    <a data-mini="true" id="editThicknessButton" data-role="button"><span data-i18n="mobile.annotationPopup.buttonThickness"></span></a>
+                </div>
+                
+                <div id="colorMenu" style="display:none">
+                    <ul class="colorPicker">
+                        <li data-color="red"></li>
+                        <li data-color="orange"></li>
+                        <li data-color="yellow"></li>
+                        <li data-color="lightgreen"></li>
+                        <li data-color="green"></li>
+                        <li data-color="blue"></li>
+                        <li data-color="black"></li>
+                        <li data-color="white"></li>
+                        <li data-color="transparent"></li>
+                    </ul>
+                    <div class="doneButton">
+                        <a data-mini="true" id="colorDoneButton" data-role="button" data-inline="true"><span data-i18n="mobile.annotationPopup.buttonDone"></span></a>
+                    </div>
+                </div>
+                
+                <div id="thicknessMenu" style="display:none">
+                    <input data-mini="true" type="range" name="thicknessSlider" id="thicknessSlider" min="1" step="1" max="5"/>
+                    
+                    <div class="doneButton">
+                        <a data-mini="true" id="thicknessDoneButton" data-role="button" data-inline="true"><span data-i18n="mobile.annotationPopup.buttonDone"></span></a>
+                    </div>
+                </div>
+                
+                <div id="noteMenu" style="display:none">
+                    <textarea id="noteTextarea" cols="20"></textarea>
+                    <div class="doneButton">
+                        <a data-mini="true" id="noteSaveButton" data-role="button" data-inline="true"><span data-i18n="mobile.annotationPopup.buttonSave"></span></a>
+                        <a data-mini="true" id="noteDeleteButton" data-role="button" data-inline="true"><span data-i18n="mobile.annotationPopup.buttonDelete"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="clipboardWrapper" style="margin-top: 60px; position:relative; z-index: 300; display:none">
+                <input type="text" id="clipboard" />
+            </div>
+            
+            <!-- add the selection rectangle div here so that it isn't scrolled with the viewer -->
+            <div id='annoteditselectrect' class='ui-selectable-helper'></div>
+
+        </div>
+
+        <div id="optionsDialog" class="custom-dialog" data-role="page" data-corners="false" data-close-btn="none">
+            <div data-role="content">
+                <div data-role="header" data-theme="d">
+                    <a data-mini="true" id="optionsCloseButton" href="#viewerPage" class="ui-btn-right" data-transition="none" data-iconpos="notext" style="display:inherit" data-role="button" data-icon="delete"></a> 
+                    <h1 data-i18n="mobile.options.options"></h1>
+                </div>
+
+                <div class="content">
+                    <form>
+                        <div id="displayOptions">
+                            <legend data-i18n="mobile.options.landscapeDisplay"></legend>
+                            <fieldset data-role="controlgroup">
+                                <input type="radio" name="displayOptions" id="displaySingle" value="optSingle" />
+                                <label for="displaySingle" data-i18n="mobile.options.displaySingle"></label>
+                                <input type="radio" name="displayOptions" id="displayDouble" value="optDouble" />
+                                <label for="displayDouble" data-i18n="mobile.options.displayDouble"></label>
+                            </fieldset>
+                        </div>
+
+                        <div id="annotationOptions" style="display:none">
+                            <legend data-i18n="mobile.options.annotations">:</legend>
+                            <fieldset data-role="controlgroup">
+                                <input type="checkbox" name="showAnnotations" id="cbShowAnnotations" />
+                                <label for="cbShowAnnotations" data-i18n="mobile.options.showAnnotations"></label>
+                            </fieldset>
+                        </div>
+
+                        <div id="offlineOptions" style="display:none">
+                            <legend data-i18n="mobile.options.offlineMode"></legend>
+                            <fieldset data-role="controlgroup">
+                                <input type="checkbox" name="enableOfflineMode" id="cbEnableOfflineMode" />
+                                <label for="cbEnableOfflineMode" data-i18n="mobile.options.offlineModeEnabled"></label>
+                                <input type="button" id="offlineDownloadBtn" data-i18n="[value]offline.downloadOfflineViewing" />
+                            </fieldset>
+                            
+                            <div class="progress-bar" style="display:none">
+                                <input type="range" id="download-progress" data-highlight="true" data-mini="true" value="0" min="0" max="100" />
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="bookmarkDialog" class="custom-dialog" data-role="page" data-corners="false" data-close-btn="none">
+            <div data-role="content" data-theme="c" style="-webkit-transform: translateZ(0)">
+                <div data-role="header" data-theme="d">
+                    <a data-mini="true" id="bookmarkDialogCloseButton" href="#viewerPage" class="ui-btn-right" data-transition="none" data-iconpos="notext" style="display:inherit" data-role="button" data-icon="delete"></a>
+                    <h1 data-i18n="mobile.bookmarks.bookmarks"></h1>
+                </div>
+
+                <div id="bookmarkView" class="content needstouch">
+                    <ul id="bookmarkList" class="outlineList needstouch" data-role="listview" data-inset="true" data-split-icon="arrow-r" data-split-theme="c">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie6 lt-ie7 lt-ie8 lt-ie9"> <![endif]-->
+<!--[if IE 7 ]> <html class="ie7 lt-ie8 lt-ie9"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie8 lt-ie9"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- use latest browser mode for IE -->
+        <title>WebViewer Universal</title>
+
+        <!-- WebViewer.js Dependencies -->
+        <script type="text/javascript" src="../resources/jquery-1.10.2.min.js"></script>        
+
+        <!-- WebViewer.js IF DEBUG -->
+<!--        <script src="../silverlight/Silverlight.js" type="text/javascript"></script>
+        <script src="../flash/FlashUtils.js"></script>
+        <script src="../flash/swfobject.js"></script>
+        <script src="../flash/FABridge.js"></script>
+        <script src="../flash/HttpAjaxPartRetriever.js"></script> 
+        <script src="../WebViewer.js" type="text/javascript"></script>-->
+        <!-- WebViewer.js ELSE IF PRODUCTION  -->
+        <script src="../WebViewer.min.js" type="text/javascript"></script>
+        <!-- WebViewer.js END -->
+
+
+        <!-- WebViewer Universal Dependencies -->
+        <script type="text/javascript" src="../resources/jquery-ui-1.10.3/jquery-ui.min.js"></script>        
+        <script type="text/javascript" src="../resources/modernizr.custom.js"></script>
+        <script type="text/javascript" src="../resources/i18next-1.7.1/i18next-1.7.1.min.js"></script>
+        <script type="text/javascript" src="../resources/backbone/underscore-min.js"></script>
+        <script type="text/javascript" src="../resources/backbone/backbone-min.js"></script>
+
+        <!-- WebViewer Universal Specific -->
+        <link type="text/css" rel="stylesheet" href="universal.css" />
+        <script src="universal.js"></script>
+		
+        <!-- WebViewer Universal Settings (Modify this to your own server setup) -->
+        <script src="../lib/universal/settings.js"></script>
+
+        <!-- WebViewer Universal Theming -->
+        <link type="text/css" rel="stylesheet" href="../resources/themes/cloud/jquery-ui-1.10.0.custom.min.css">
+        <link type="text/css" rel="stylesheet" href="../resources/themes/classic/icons.css"> <!-- use the extra icon set for the classic theme -->
+        <link type="text/css" rel="stylesheet" href="../resources/themes/classic/icons.css" media="screen"> <!-- use the extra icon set for the classic theme -->
+    </head>
+    <body>
+        <div id="headerContainer">       
+            <!-- Optional: add custom header content here.
+                 Example usage: Application logo/branding, links to other pages in your app (My Account, Login, Sign up), etc.
+            -->
+<!--            <div >
+                <span >
+                    <span style = "font-weight:bold; font-size: 28px;" > Awesome Bookstore </span>
+                    <button id = "browseButton" > Browse </button>
+                </span>
+                <span style = "float:right;padding: 0 30px;" > sign - in </span>
+            </div>
+            <div style = "clear:both" > </div>-->
+        </div>
+        <div id="contentContainer">
+            <div id="leftPanelContainer" style="float:left;">
+            </div>
+            <div id="viewerContainer" style="float:left;width:100%">
+                <div id="control" class="toolbar ui-widget-header" style="overflow:hidden;white-space:nowrap">
+                    <span class="left-aligned">
+                        <button id="sidePanelToggle" type="button" data-i18n="[title]controlbar.toggleSidePanel;controlbar.toggleSidePanel"></button>
+                    </span>
+                    <div class="right-aligned">
+                        <div class="group">
+                            <button id="layoutModeMenuButton" type="button" data-i18n="[title]controlbar.pageLayoutModes;controlbar.pageLayoutModes"></button>
+                            <button id="rotateButton" type="button" data-i18n="[title]controlbar.rotate;controlbar.rotate"></button>
+                        </div>
+                        <div class="group">
+                            <button type="button" id="prevPage" data-i18n="[title]controlbar.previousPage;controlbar.previousPage"></button>
+                            <input type="text" pattern="[0-9]*" name="pageNumberBox" id="pageNumberBox"/>
+                            <div class="ui-label" id="totalPages">/0</div>
+                            <button type="button" id="nextPage" class="" data-i18n="[title]controlbar.nextPage;controlbar.nextPage"></button>
+                        </div>
+                        <div class="group">
+                            <button type="button" id="zoomOut" data-i18n="[title]controlbar.zoomOut;controlbar.zoomOut">Zoom Out</button>
+                            <div class="hidden-xs hidden-sm hidden-md" id="slider" data-i18n="[title]controlbar.zoom"></div>
+                            <input type="text" name="zoomBox" id="zoomBox" data-i18n="[title]controlbar.zoom"/>
+                            <button type="button" id="zoomIn" data-i18n="[title]controlbar.zoomIn;controlbar.zoomIn"></button>
+                        </div>
+
+                        <div class="group">
+                            <div id="fitModes"  class="hidden-xs" title="Page layout">
+                                <input type="radio" id="fitWidth" name="radioFirst"/>
+                                <label for="fitWidth" data-i18n="[title]controlbar.fitWidth;controlbar.fitWidth"></label>
+                                <input type="radio" id="fitPage" name="radioFirst"/>
+                                <label for="fitPage" data-i18n="[title]controlbar.fitPage;controlbar.fitPage"></label>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <span id="tools">
+                                <input type="radio" id="pan" data-tool-mode="Pan" name="radioSecond" />
+                                <label for="pan" data-i18n="[title]controlbar.pan;controlbar.pan"></label>
+                                <input type="radio" id="textSelect" data-tool-mode="TextSelect" name="radioSecond"/>
+                                <label for="textSelect" data-i18n="[title]controlbar.textSelect;controlbar.textSelect"></label>
+                            </span>
+                        </div>
+                        <div class="group">
+                            <span id="searchControl" class="search-component hidden-xs hidden-sm">
+                                <input id="searchBox" type="text" class="toolbar-input-text search-component" name="search" data-i18n="[title]controlbar.search"/>
+                                <button id="searchButton" class="search-component" type="button" data-i18n="[title]controlbar.search;controlbar.search"></button>
+                            </span>
+                        </div>
+                        <div class="group">
+                            <button id="downloadButton" type="button" data-i18n="[title]controlbar.download;controlbar.download"></button>
+                            <button id="printButton" type="button"  data-i18n="[title]controlbar.print;controlbar.print" style="display: none;"></button>
+                            <button id="fullScreenButton" type="button" data-i18n="[title]controlbar.fullScreen;controlbar.fullScreen"></button>
+                            <button id="aboutButton"  type='button'>About</button>
+                        </div>        
+                    </div>
+                </div>
+                <ul id="layoutModeMenuList" class="ui-widget ui-menu-dropdown" style="display:none">
+                    <li data-layout-mode="SinglePage"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-single"></span>
+                            <div data-i18n="controlbar.layoutMode.single"></div></a></li>
+                    <li data-layout-mode="Continuous"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-single-cont"></span>
+                            <div data-i18n="controlbar.layoutMode.continuous"></div></a></li>
+                    <li data-layout-mode="Facing"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-facing"></span>
+                            <div data-i18n="controlbar.layoutMode.facing"></div></a></li>
+                    <li data-layout-mode="FacingContinuous"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-facing-cont"></span>
+                            <div data-i18n="controlbar.layoutMode.facingContinuous"></div></a></li>
+                    <li data-layout-mode="FacingCover"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-cover"></span>
+                            <div data-i18n="controlbar.layoutMode.cover"></div></a></li>
+                    <li data-layout-mode="CoverContinuous"><a href="javascript:void(0)"><span class="ui-icon ui-icon-custom-page-cover-cont"></span>
+                            <div data-i18n="controlbar.layoutMode.coverContinuous"></div></a></li>
+                </ul>
+                <div id="overlayMessage" class="overlayMessage" style="display:none"></div>
+                <div id="printDialog" style="display:none">
+                    <div>
+                        <span data-i18n="print.pagesToPrint"></span>
+                        <input type="text" id="printPageNumbers" title="Enter a single page number or a single page range. e.g. 3, 4-10." placeholder="e.g. 3, 4-10" style="width:100px"  />
+                    </div>
+                    <br/>
+                    <div id="printProgress"><div class="progressLabel"></div></div>
+                </div>
+                <div id="documentContainer" style="overflow: auto;width:100%;">
+                </div>
+            </div>
+        
+        <div id="rightPanelContainer" style="float:right;">
+            </div>
+            <div style="clear:both"/>
+        </div>
+        <div id="footerContainer">            
+            <!-- Optional: add footer content here 
+                 Example usage: Application logo/branding, a secondary control toolbar (e.g. page navigation), status bar
+            -->
+        </div>
+    </body>
+</html>
+

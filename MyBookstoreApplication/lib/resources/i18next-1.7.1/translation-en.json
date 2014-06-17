@@ -1,0 +1,137 @@
+{
+    "controlbar": {
+        "fullScreen": "Full Screen",
+        "search": "Search",
+        "textSelect": "Text Select",
+        "pan": "Pan",
+        "fitWidth": "Fit Width",
+        "fitPage": "Fit Page",
+        "zoom": "Zoom",
+        "zoomIn": "Zoom In",
+        "zoomOut": "Zoom Out",
+        "nextPage": "Next Page",
+        "previousPage": "Previous Page",
+        "rotate": "Rotate 90°",
+        "pageLayoutModes": "Page Layout Modes",
+        "layoutMode": {
+            "single": "Single",
+            "continuous": "Continuous",
+            "facing": "Facing",
+            "facingContinuous": "Facing Continuous",
+            "cover": "Cover",
+            "coverContinuous": "Cover Continuous"
+        },
+        "toggleSidePanel": "Toggle Side Panel",
+        "download" : "Download",
+        "print" : "Print"
+    },
+    
+    "sidepanel": {
+        "thumbnails": "Thumbnails",
+        "outline": "Outline",
+        "outlineTab": {
+            "noOutlines": "This document has no outlines."
+        },
+        "fullDocumentSearch": "Full Document Search",
+        "searchTab": {
+            "buttonGo": "Go",
+            "wholeWordOnly": "Whole word only",
+            "caseSensitive": "Case Sensitive",
+            "noResults": "No results were found."
+        },
+        "annotations": "Annotations",
+        "annotationTab": {
+            "buttonHide": "Hide",
+            "buttonShow": "Show",
+            "buttonSave": "Save",
+            "toggleAnnotations": "Toggle Annotations",
+            "saveAnnotations": "Save Annotations",
+            
+            "tooltips": {
+                "edit": "Edit Annotation",
+                "stickyNote": "Sticky Note",
+                "highlight": "Text Highlight",
+                "underline": "Text Underline",
+                "strikeout": "Text Strikeout",
+                "rectangle": "Rectangle",
+                "ellipse": "Ellipse",
+                "line": "Line",
+                "freeHand": "Free Hand"
+            },
+            
+            "fill": "Fill",
+            "stroke": "Stroke",
+            "thickness": "Thickness",
+            "setAsDefault": "Set as Default"
+        }
+    },
+    
+    "annotations": {
+        "permissionEdit": "You do not have permissions to edit this annotation.",
+        "permissionDelete": "You do not have permissions to delete this annotation.",
+        "readOnlyDelete": "Cannot delete annotations in read-only mode.",
+        "readOnlyCreate": "Cannot create new annotations in read-only mode.",
+        "readOnlyEdit": "Cannot edit annotations in read-only mode.",
+        "markupOffCreate": "Cannot create new annotations when markups are toggled off.",
+        
+        "savingAnnotations": "Saving Annotations...",
+        "saveSuccess": "Annotations were saved successfully",
+        "saveError": "Annotations were not able to be saved",
+        
+        "pageNumber": "Page __number__",
+        
+        "types": {
+            "stickyNote": "Sticky",
+            "highlight": "Highlight",
+            "underline": "Underline",
+            "strikeout": "Strikeout",
+            "rectangle": "Rectangle",
+            "ellipse": "Ellipse",
+            "line": "Line",
+            "freeHand": "Free Hand",
+            "stamp": "Stamp"
+        }
+    },
+    
+    "unsupportedBrowser": "You are viewing this application with an unsupported browser. Please see the list of supported browsers:",
+    
+    "endOfDocument": "End of document.",
+    
+    "offline": {
+        "downloadOfflineViewing": "Download for Offline Viewing",
+        "enableOffline": "Enable Offline Mode",
+        "disableOffline": "Disable Offline Mode",
+        "cancelDownload": "Cancel Download"
+    },
+    
+    "print": {
+        "pagesToPrint": "Pages to print: ",
+        "preparingPages": "Preparing pages: __current__ / __total__",
+        "pagesPrepared": "Ready to print",
+        "preparePages": "Prepare Pages",
+        "print": "Print",
+        "done": "Done"
+    },
+            
+    "mobile": {
+        "annotationPopup": {
+            "buttonDone": "Done",
+            "buttonDelete": "Delete",
+            "buttonNote": "Note",
+            "buttonStroke": "Stroke Color",
+            "buttonFill": "Fill Color",
+            "buttonThickness": "Thickness",
+            "buttonSave": "Save"
+        },
+        
+        "bookmarks": {
+            "bookmarks": "Bookmarks",
+            "noBookmarks": "This document does not contain any bookmarks.",
+            "upOneLevel": "Up One Level"
+        },
+        
+        "thumbnailPageNumber": "__current__ of __total__",
+        
+        "unsupportedBrowser": "Unsupported browser. Canvas is not present."
+    }
+}

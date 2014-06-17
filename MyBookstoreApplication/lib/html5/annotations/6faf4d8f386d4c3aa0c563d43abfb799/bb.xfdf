@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+<fields />
+<annots><text subject="annotations.types.stickyNote" page="0" rect="183.000046,740.313714,206.250052,717.063709" name="e0a5038a-dbed-10c9-587b-a8491b54d5c0" title="bb" date="D:20140604110733+08'00'" color="#FFFF00" creationdate="D:20140604110733+08'00'" icon="Comment"><contents-richtext><body xmlns="http://www.w3.org/1999/xhtml" xfa:spec="2.0.2" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3"><p dir="ltr"><span dir="ltr" style="font-size:10.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal">bb</span></p></body></contents-richtext><popup flags="print,nozoom,norotate" page="0" rect="102.264731,821.049029,222.264761,761.049014" open="yes"/></text></annots>
+<pages>
+<defmtx matrix="1.333333,0,0,-1.333333,0,1122.72" />
+</pages>
+</xfdf>

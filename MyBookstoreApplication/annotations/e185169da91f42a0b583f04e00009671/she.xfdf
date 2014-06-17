@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+<fields />
+<annots>
+<line subject="annotations.types.line" page="0" rect="63.511781,802.749024,172.235337,800.057847" name="a9aa79dc-5faa-8764-2390-8f50873a7aef" title="she" date="D:20140613140606+08'00'" color="#000000" width="1" creationdate="D:20140613140606+08'00'" start="63.511781,802.749024" end="172.235337,800.057847"><popup flags="print,nozoom,norotate" page="0" rect="0,842.040211,120.00003,782.040196" open="no"/></line>
+<highlight subject="annotations.types.highlight" page="0" rect="92.272523,277.507569,253.425063,255.495064" name="8517d1a5-57a0-ce14-ba02-42378bb4edaa" title="she" date="D:20140613140610+08'00'" color="#FFFF00" opacity="0.25" creationdate="D:20140613140610+08'00'" coords="92.272523,277.507569,253.425063,277.507569,92.272523,255.495064,253.425063,255.495064"><popup flags="print,nozoom,norotate" page="0" rect="11.537209,358.242884,131.537239,298.242869" open="no"/></highlight>
+<text subject="annotations.types.stickyNote" page="0" rect="92.038258,348.478322,115.288264,325.228317" name="6ba74ab0-3ab4-3f07-e305-797746634261" title="she" date="D:20140613140612+08'00'" color="#FFFF00" creationdate="D:20140613140612+08'00'" icon="Comment"><contents-richtext><body xmlns="http://www.w3.org/1999/xhtml" xfa:spec="2.0.2" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3"><p dir="ltr"><span dir="ltr" style="font-size:10.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal">aa</span></p></body></contents-richtext><popup flags="print,nozoom,norotate" page="0" rect="11.302944,429.213637,131.302974,369.213622" open="yes"/></text>
+<polygon subject="annotations.types.polygon" page="0" rect="51.670601,332.869495,199.685344,296.807721" name="33791b68-48c2-6726-b3af-bb11ca8a3872" title="she" date="D:20140613140619+08'00'" color="#000000" interior-color="#FFFF00" width="1" creationdate="D:20140613140616+08'00'"><popup flags="print,nozoom,norotate" page="0" rect="0,413.604809,120.00003,353.604794" open="no"/><vertices>175.46475,324.795964;199.685344,324.795964;176.002985,296.807721;140.479447,310.263607;114.644146,300.575369;51.670601,332.869495</vertices></polygon>
+<highlight subject="annotations.types.highlight" page="0" rect="154.642539,722.070181,189.232547,710.962678" name="7c429b97-f7dc-19bd-70b9-0c462ff4dae0" title="richard" date="D:20140612115118+08'00'" color="#FFFF00" opacity="0.25" creationdate="D:20140612115118+08'00'" coords="154.642539,722.070181,189.232547,722.070181,154.642539,710.962678,189.232547,710.962678"><popup flags="print,nozoom,norotate" page="0" rect="73.907224,802.805495,193.907254,742.80548" open="no"/></highlight>
+</annots>
+<pages>
+<defmtx matrix="1.333333,0,0,-1.333333,0,1122.72" />
+</pages>
+</xfdf>

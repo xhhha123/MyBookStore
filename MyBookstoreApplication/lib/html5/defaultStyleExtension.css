@@ -1,0 +1,37 @@
+/**
+ * Example of an external stylesheet for ReaderControl.
+ * This file holds CSS style customizations for ReaderControl.
+*/
+
+
+/** Toolbar */
+#control.ui-widget-header {
+    background-color: #eee;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0.0, #ddd), color-stop(1.0, #fff));
+    background: -webkit-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+    background: -moz-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+    background: -ms-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+    background: -o-linear-gradient(center bottom, #ddd 0%, #fff 100%);
+}
+
+.ui-selected .ui-widget-content{
+    background: #CBE6EF; 
+}
+
+
+/** Active elements */
+.thumbContainer.selected, .bookmarkWrapper.selected, .searchResultLine.selected,
+.ui-buttonset label.ui-state-active {
+    /* color for UI active selection */
+    background: #CBE6EF !important;
+}
+
+/** button borders*/
+.ui-state-default, .ui-slider-handle{
+    border: 1px solid #777 !important;
+}
+
+#sidePanel .ui-state-default{
+/*    border: none !important;*/
+    
+}

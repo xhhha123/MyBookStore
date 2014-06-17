@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+<fields />
+<annots>
+<text subject="Sticky" page="0" rect="89.57408,722.271872,112.824086,699.021866" name="7a686570-a191-8b39-bca5-6456132f69c9" title="Raul" date="D:20140604104247+08'00'" color="#FFFF00" creationdate="D:20140513150137+08'00'" icon="Comment"><contents-richtext><body xmlns="http://www.w3.org/1999/xhtml" xfa:spec="2.0.2" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3"><p dir="ltr"><span style="font-size:10.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal" dir="ltr">TEst</span></p></body></contents-richtext><popup flags="print,nozoom,norotate" page="0" rect="9.11832,792.000198,129.11835,732.000183" open="no"/></text>
+<text subject="annotations.types.stickyNote" page="0" rect="152.858862,635.896041,176.108868,612.646036" name="1527e8f2-a16c-aaae-134b-522df87aab53" title="aa" date="D:20140604104317+08'00'" color="#FFFF00" creationdate="D:20140604104317+08'00'" icon="Comment"><contents-richtext><body xmlns="http://www.w3.org/1999/xhtml" xfa:spec="2.0.2" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="Acrobat:10.1.3"><p dir="ltr"><span style="font-size:10.0pt;text-align:left;color:#000000;font-weight:normal;font-style:normal" dir="ltr">aa</span></p></body></contents-richtext><popup flags="print,nozoom,norotate" page="0" rect="72.123547,716.631356,192.123577,656.631341" open="yes"/></text>
+</annots>
+<pages>
+<defmtx matrix="1.333333,0,0,-1.333333,0,1122.72" />
+</pages>
+</xfdf>

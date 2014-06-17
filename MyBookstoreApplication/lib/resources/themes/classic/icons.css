@@ -1,0 +1,131 @@
+.ui-icon-custom-fit-width{
+    background-image: url('images/arrow_ew.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-fit-page{
+    background-image: url('images/arrow_nsew.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-tool-pan{
+    background-image: url('images/hand.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-tool-text{
+    background-image: url('images/ibeam.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-back{
+    background-image: url('images/reverse_green.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-thumbnail{
+    background-image: url('images/pictures_thumbs.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-outline{
+    background-image: url('images/outline.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-find{
+    background-image: url('images/find.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-note{
+    background-image: url('images/note.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-prev{
+    background-image: url('images/reverse_green.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-next{
+    background-image: url('images/play_green.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-rotate{
+    background-image: url('images/arrow_rotate_clockwise.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon-custom-arrow-l{
+    background-image: url('images/arrows_sp.png') !important;
+    background-position: -16px 0px;
+}
+.ui-icon-custom-arrow-r{
+    background-image: url('images/arrows_sp.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-search{
+    background-image: url('images/magnifier.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon-custom-screen{
+    background-image: url('images/application_osx_double.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon-custom-arrow-d{
+    background-image: url('images/arrow_down.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon-custom-cancel{
+    background-image: url('images/cancel.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon-custom-offline{
+    background-image: url('images/offline_mode.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-page-single{
+    background-image: url('images/page_single.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-page-single-cont{
+    background-image: url('images/page_cont.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-page-facing{
+    background-image: url('images/page_facing.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-page-facing-cont{
+    background-image: url('images/page_facing_cont.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-page-cover{
+    background-image: url('images/page_cover_facing.png') !important;
+    background-position: 0 0;
+}
+.ui-icon-custom-page-cover-cont{
+    background-image: url('images/page_cover_facing_cont.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon-custom-print{
+    background-image: url('images/printer_color.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon-custom-download{
+    background-image: url('images/disk_download.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon-custom-info{
+    background-image: url('images/information.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon-custom-side-contact{
+    background-image: url('images/application_side_contract.png') !important;
+    background-position: 0 0;
+}
+
+.ui-icon-custom-side-expand{
+    background-image: url('images/application_side_expand.png') !important;
+    background-position: 0 0;
+}
+

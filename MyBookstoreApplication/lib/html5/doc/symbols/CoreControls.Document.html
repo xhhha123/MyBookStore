@@ -1,0 +1,1641 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+
+                <title>PDFTron WebViewer HTML5 API Reference - CoreControls.Document</title>
+                <link rel="stylesheet" href="../../external/jquery.treeview.css" />
+                <script src="../../external/jquery-1.7.2.min.js" type="text/javascript"></script>
+                <script src="../../external/jquery.cookie.js" type="text/javascript"></script>
+                <script src="../../external/jquery.treeview.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){		
+				$(".classList").treeview({ persist: "cookie", cookieId: "webviewer-html5-ref"});		
+			});
+		</script>
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	width: 800px;
+}
+
+a:visited {
+    color: #036;
+}
+a:link {
+    color: #07A;
+}
+a:hover{
+    color: #f38805 !important;
+}
+a.selected{
+    font-weight: bold;
+    color: #f38805 !important;
+    background: none !important;
+}
+.header
+{
+	clear: both;
+	background-color: #ccc;
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 1px solid #7F8FB1;
+	height: 1px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+#index
+{
+	margin-top: 24px;
+	float: left;
+	width: 260px;
+	position: absolute;
+	left: 8px;
+	background-color: #F3F3F3;
+/*	padding: 8px;*/
+        padding: 4px 0 0 0px;
+}
+
+#content
+{
+	margin-left: 290px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+/*	padding: 0;*/
+        padding: 0 8px 0 2px;
+/*	margin: 0 0 0 8px;*/
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+/*	padding: 0;
+	margin: 0 0 8px 0;*/
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+/*	background-color: #7F8FB1;*/
+	background-color: #07A;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+/*	border: 1px #7F8FB1 solid;*/
+        border: 1px #07A solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	font-style: italic;
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+/** CUSTOM */
+tr.deprecated .fixedFont
+{
+	text-decoration: line-through;
+}
+
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">   
+                    <div><img src="PDFTron.png"></div>
+                    <h2>WebViewer HTML5 API Reference v1.7.1.24014</h2>
+                </div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+        
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><i><a href="../symbols/Annotations.html">Annotations</a></i><ul>
+	
+	<li><a href="../symbols/Annotations.Annotation.html">.Annotation</a></li>
+	
+	<li><a href="../symbols/Annotations.BoxControlHandle.html">.BoxControlHandle</a></li>
+	
+	<li><a href="../symbols/Annotations.BoxSelectionModel.html">.BoxSelectionModel</a></li>
+	
+	<li><a href="../symbols/Annotations.ButtonWidgetAnnotation.html">.ButtonWidgetAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.CalloutControlHandle.html">.CalloutControlHandle</a></li>
+	
+	<li><a href="../symbols/Annotations.ChoiceWidgetAnnotation.html">.ChoiceWidgetAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.Color.html">.Color</a></li>
+	
+	<li><a href="../symbols/Annotations.ControlHandle.html">.ControlHandle</a></li>
+	
+	<li><a href="../symbols/Annotations.EllipseAnnotation.html">.EllipseAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.FreeHandAnnotation.html">.FreeHandAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.FreeTextAnnotation.html">.FreeTextAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.IPathAnnotation.html">.IPathAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.LineAnnotation.html">.LineAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.LineControlHandle.html">.LineControlHandle</a></li>
+	
+	<li><a href="../symbols/Annotations.LineSelectionModel.html">.LineSelectionModel</a></li>
+	
+	<li><a href="../symbols/Annotations.MarkupAnnotation.html">.MarkupAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.PathControlHandle.html">.PathControlHandle</a></li>
+	
+	<li><a href="../symbols/Annotations.PathSelectionModel.html">.PathSelectionModel</a></li>
+	
+	<li><a href="../symbols/Annotations.Point.html">.Point</a></li>
+	
+	<li><a href="../symbols/Annotations.PopupAnnotation.html">.PopupAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.Rect.html">.Rect</a></li>
+	
+	<li><a href="../symbols/Annotations.RectangleAnnotation.html">.RectangleAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.SelectionAlgorithm.html">.SelectionAlgorithm</a></li>
+	
+	<li><a href="../symbols/Annotations.SelectionModel.html">.SelectionModel</a></li>
+	
+	<li><a href="../symbols/Annotations.StampAnnotation.html">.StampAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.StickyAnnotation.html">.StickyAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextHighlightAnnotation.html">.TextHighlightAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextMarkupAnnotation.html">.TextMarkupAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextSelectionModel.html">.TextSelectionModel</a></li>
+	
+	<li><a href="../symbols/Annotations.TextSquigglyAnnotation.html">.TextSquigglyAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextStrikeoutAnnotation.html">.TextStrikeoutAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextUnderlineAnnotation.html">.TextUnderlineAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.TextWidgetAnnotation.html">.TextWidgetAnnotation</a></li>
+	
+	<li><a href="../symbols/Annotations.WidgetAnnotation.html">.WidgetAnnotation</a></li>
+	
+	</ul></li><li><i><a href="../symbols/CoreControls.html">CoreControls</a></i><ul>
+	
+	<li><a href="../symbols/CoreControls.AnnotationManager.html">.AnnotationManager</a></li>
+	
+	<li><a href="../symbols/CoreControls.Bookmark.html">.Bookmark</a></li>
+	
+	<li><a href="../symbols/CoreControls.DisplayMode.html">.DisplayMode</a></li>
+	
+	<li><a href="../symbols/CoreControls.DisplayModeManager.html">.DisplayModeManager</a></li>
+	
+	<li><a href="../symbols/CoreControls.DisplayModes.html">.DisplayModes</a></li>
+	
+	<li><a href="../symbols/CoreControls.Document.html">.Document</a></li>
+	
+	<li><a href="../symbols/CoreControls.DocumentViewer.html">.DocumentViewer</a></li>
+	
+	<li><a href="../symbols/CoreControls.DocumentViewer.FitMode.html">.DocumentViewer.FitMode</a></li>
+	
+	<li><a href="../symbols/CoreControls.DocumentViewer.SearchMode.html">.DocumentViewer.SearchMode</a></li>
+	
+	<li><a href="../symbols/CoreControls.DocumentViewer.SearchResults.html">.DocumentViewer.SearchResults</a></li>
+	
+	</ul></li><li><i><a href="../symbols/PartRetrievers.html">PartRetrievers</a></i><ul>
+	
+	<li><a href="../symbols/PartRetrievers.HttpPartRetriever.html">.HttpPartRetriever</a></li>
+	
+	<li><a href="../symbols/PartRetrievers.LocalPartRetriever.html">.LocalPartRetriever</a></li>
+	
+	<li><a href="../symbols/PartRetrievers.StreamingPartRetriever.html">.StreamingPartRetriever</a></li>
+	
+	</ul></li><li><a href="../symbols/ReaderControl.html">ReaderControl</a></li>
+	
+	<li><i><a href="../symbols/ReaderControl.config.html">ReaderControl.config</a></i><ul>
+	
+	<li><a href="../symbols/ReaderControl.config.ui.html">.ui</a></li>
+	
+	</ul></li><li><i><a href="../symbols/Tools.html">Tools</a></i><ul>
+	
+	<li><a href="../symbols/Tools.AnnotationEditTool.html">.AnnotationEditTool</a></li>
+	
+	<li><a href="../symbols/Tools.CalloutCreateTool.html">.CalloutCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.EllipseCreateTool.html">.EllipseCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.FreeHandCreateTool.html">.FreeHandCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.GenericAnnotationCreateTool.html">.GenericAnnotationCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.LineCreateTool.html">.LineCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.MobileStickyCreateTool.html">.MobileStickyCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.PageCoordinate.html">.PageCoordinate</a></li>
+	
+	<li><a href="../symbols/Tools.PanTool.html">.PanTool</a></li>
+	
+	<li><a href="../symbols/Tools.PolygonCreateTool.html">.PolygonCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.PolylineCreateTool.html">.PolylineCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.RectangleCreateTool.html">.RectangleCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.StickyCreateTool.html">.StickyCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextAnnotationCreateTool.html">.TextAnnotationCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextHighlightCreateTool.html">.TextHighlightCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextSelectTool.html">.TextSelectTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextStrikeoutCreateTool.html">.TextStrikeoutCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextTool.html">.TextTool</a></li>
+	
+	<li><a href="../symbols/Tools.TextUnderlineCreateTool.html">.TextUnderlineCreateTool</a></li>
+	
+	<li><a href="../symbols/Tools.Tool.html">.Tool</a></li>
+	
+	</ul></li><li><i><a href="../symbols/WebViewerInterface.html">WebViewerInterface</a></i><ul>
+	
+        </ul></li>
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				Class CoreControls.Document
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+				
+			
+				Represents a document.
+				
+				<!--
+					<br /><i>Defined in: </i> &lt;..\Document.js&gt;.
+				-->
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class CoreControls.Document.">
+				<caption>Class Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/CoreControls.Document.html#constructor">CoreControls.Document</a></b>(id)
+							</div>
+							<div class="description">Constructs a new empty Document, representing a document with individual pages (canvases) that can be displayed on screen and printed.</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class CoreControls.Document.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#CancelLoadCanvas">CancelLoadCanvas</a></b>(id)
+								</div>
+								<div class="description">Cancels the LoadCanvasAsync call corresponding to the passed in id</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#CancelOfflineModeDownload">CancelOfflineModeDownload</a></b>()
+								</div>
+								<div class="description">Cancels a download for offline mode in progress.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#CancelThumbnailRequest">CancelThumbnailRequest</a></b>(pageIndex, name)
+								</div>
+								<div class="description">Cancels the request made for the specified page's thumbnail.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#GetBookmarks">GetBookmarks</a></b>()
+								</div>
+								<div class="description">Returns an array containing the bookmarks in the document.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#GetLinks">GetLinks</a></b>(pageIndex)
+								</div>
+								<div class="description">Returns an array containing the links on the specified page of the document.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#GetOfflineModeEnabled">GetOfflineModeEnabled</a></b>()
+								</div>
+								<div class="description">Returns whether offline mode is currently enabled or not.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#GetPageCount">GetPageCount</a></b>()
+								</div>
+								<div class="description">Returns the number of pages in a document.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#GetPageInfo">GetPageInfo</a></b>(pageIndex)
+								</div>
+								<div class="description">Returns an object containing the width and height of a page.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#GetPDFCoordinates">GetPDFCoordinates</a></b>(pageIndex, x, y)
+								</div>
+								<div class="description">Returns an object with with the original x and y coordinates converted to PDF coordinates for the page.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#GetTextPosition">GetTextPosition</a></b>(pageIndex, textStartIndex, textEndIndex, onComplete(quads))
+								</div>
+								<div class="description">Gets quads for each of the characters from start to end index.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#GetXODCoordinates">GetXODCoordinates</a></b>(pageIndex, x, y)
+								</div>
+								<div class="description">Returns an object with with the original x and y PDF coordinates converted to XOD coordinates for the page.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#IncludesThumbnails">IncludesThumbnails</a></b>()
+								</div>
+								<div class="description">Used to know if a document contains thumbnails.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#InitOfflineDB">InitOfflineDB</a></b>(onComplete)
+								</div>
+								<div class="description">Initializes the offline database for use.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#IsDownloaded">IsDownloaded</a></b>()
+								</div>
+								<div class="description">Whether the document has already been downloaded for offline mode or not.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#LoadAsync">LoadAsync</a></b>(partRetriever, callback)
+								</div>
+								<div class="description">Initialize a Document so that it can be used to load page canvases.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#LoadCanvasAsync">LoadCanvasAsync</a></b>(pageIndex, zoom, pageRotation, drawComplete(canvases,pageIndex), drawProgressive, canvasNum)
+								</div>
+								<div class="description">Loads a canvas for a particular page index.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#LoadPageText">LoadPageText</a></b>(pageIndex, onComplete(text))
+								</div>
+								<div class="description">Gets all the text on the requested page.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#LoadThumbnailAsync">LoadThumbnailAsync</a></b>(pageNumber, onLoadThumbnail(HTMLImageElement|HTMLCanvasElement), name)
+								</div>
+								<div class="description">Loads a thumbnail image for a particular page.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#PauseLoadCanvas">PauseLoadCanvas</a></b>(id)
+								</div>
+								<div class="description">Pauses the LoadCanvasAsync call corresponding to the passed in id</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#ResumeLoadCanvas">ResumeLoadCanvas</a></b>(id)
+								</div>
+								<div class="description">Resumes the LoadCanvasAsync call corresponding to the passed in id</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#SetOfflineModeEnabled">SetOfflineModeEnabled</a></b>(enabled)
+								</div>
+								<div class="description">Sets whether offline mode is enabled or not.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#StoreOffline">StoreOffline</a></b>(onComplete, onProgress)
+								</div>
+								<div class="description">Downloads the document for offline viewing.</div>
+							</td>
+						</tr>
+					
+						<tr >
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/CoreControls.Document.html#UnloadResources">UnloadResources</a></b>()
+								</div>
+								<div class="description">Cleans up the resources associated with the document.</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Class Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>CoreControls.Document</b>(id)
+				</div>
+				
+				<div class="description">
+					Constructs a new empty Document, representing a document with individual pages (canvases) that can be displayed on screen and printed.
+					
+				</div>
+				
+				
+				
+				
+					
+						<dl class="detailList">
+						<dt class="heading">Parameters:</dt>
+						
+							<dt>
+								<span class="light fixedFont">{string}</span>  <b>id</b>
+								
+							</dt>
+								<dd>An optional unique identifier for the document to be used with offline mode</dd>
+						
+						</dl>
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name="CancelLoadCanvas"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>CancelLoadCanvas</b>(id)
+					
+					</div>
+					<div class="description">
+						Cancels the LoadCanvasAsync call corresponding to the passed in id
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>id</b>
+									
+								</dt>
+								<dd>The id returned from the LoadCanvasAsync call that will be cancelled.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="CancelOfflineModeDownload"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>CancelOfflineModeDownload</b>()
+					
+					</div>
+					<div class="description">
+						Cancels a download for offline mode in progress.  If there is no current download then this does nothing.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="CancelThumbnailRequest"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>CancelThumbnailRequest</b>(pageIndex, name)
+					
+					</div>
+					<div class="description">
+						Cancels the request made for the specified page's thumbnail.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>pageIndex</b>
+									
+								</dt>
+								<dd>The page of the thumbnail to cancel its request</dd>
+							
+								<dt>
+									<b>name</b>
+									
+								</dt>
+								<dd>The name that was used in the LoadThumbnailAsync call. Different names are only requiredif requests for the same page will be occurring from multiple sources.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetBookmarks"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{array}</span>
+					<b>GetBookmarks</b>()
+					
+					</div>
+					<div class="description">
+						Returns an array containing the bookmarks in the document.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{array}</span> An array containing the bookmarks in the current document.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetLinks"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{array}</span>
+					<b>GetLinks</b>(pageIndex)
+					
+					</div>
+					<div class="description">
+						Returns an array containing the links on the specified page of the document.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>pageIndex</b>
+									
+								</dt>
+								<dd>The page number, zero-indexed, that the links are on.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{array}</span> An array containing the links on the specified page of the document.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetOfflineModeEnabled"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>GetOfflineModeEnabled</b>()
+					
+					</div>
+					<div class="description">
+						Returns whether offline mode is currently enabled or not.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetPageCount"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{number}</span>
+					<b>GetPageCount</b>()
+					
+					</div>
+					<div class="description">
+						Returns the number of pages in a document.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{number}</span> The number of the pages in the current document.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetPageInfo"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{object}</span>
+					<b>GetPageInfo</b>(pageIndex)
+					
+					</div>
+					<div class="description">
+						Returns an object containing the width and height of a page.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>pageIndex</b>
+									
+								</dt>
+								<dd>The page number, zero-indexed, of the requested page.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{object}</span> An object representing the page info. Contains the properties "width" and "height".</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetPDFCoordinates"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{object}</span>
+					<b>GetPDFCoordinates</b>(pageIndex, x, y)
+					
+					</div>
+					<div class="description">
+						Returns an object with with the original x and y coordinates converted to PDF coordinates for the page.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>pageIndex</b>
+									
+								</dt>
+								<dd>The page number, zero-indexed, that the coordinates are on</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>x</b>
+									
+								</dt>
+								<dd>The x coordinate</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>y</b>
+									
+								</dt>
+								<dd>The y coordinate</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{object}</span> An object with the x and y PDF coordinates</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetTextPosition"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>GetTextPosition</b>(pageIndex, textStartIndex, textEndIndex, onComplete(quads))
+					
+					</div>
+					<div class="description">
+						Gets quads for each of the characters from start to end index.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>pageIndex</b>
+									
+								</dt>
+								<dd>The page number, zero-indexed, that the text is on.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>textStartIndex</b>
+									
+								</dt>
+								<dd>The position where to start getting character quads from.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>textEndIndex</b>
+									
+								</dt>
+								<dd>The position (up to, but not including) where to finish getting characters.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{function}</span> <b>onComplete(quads)</b>
+									
+								</dt>
+								<dd>The callback to call when the text positions are ready.  quads is an array of objects with (x1,y1,x2,y2,x3,y3,x4,y4)</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="GetXODCoordinates"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{object}</span>
+					<b>GetXODCoordinates</b>(pageIndex, x, y)
+					
+					</div>
+					<div class="description">
+						Returns an object with with the original x and y PDF coordinates converted to XOD coordinates for the page.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>pageIndex</b>
+									
+								</dt>
+								<dd>The page number, zero-indexed, that the coordinates are on</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>x</b>
+									
+								</dt>
+								<dd>The x coordinate</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>y</b>
+									
+								</dt>
+								<dd>The y coordinate</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{object}</span> An object with the x and y XOD coordinates</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="IncludesThumbnails"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{boolean}</span>
+					<b>IncludesThumbnails</b>()
+					
+					</div>
+					<div class="description">
+						Used to know if a document contains thumbnails.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> True if the document contains thumbnails.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="InitOfflineDB"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>InitOfflineDB</b>(onComplete)
+					
+					</div>
+					<div class="description">
+						Initializes the offline database for use.  Must be called before any other offline mode functions are used.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{function}</span> <b>onComplete</b>
+									
+								</dt>
+								<dd>The function that's called when the offline database is ready for use.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="IsDownloaded"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>IsDownloaded</b>()
+					
+					</div>
+					<div class="description">
+						Whether the document has already been downloaded for offline mode or not.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="LoadAsync"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>LoadAsync</b>(partRetriever, callback)
+					
+					</div>
+					<div class="description">
+						Initialize a Document so that it can be used to load page canvases.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{CoreControls.PartRetrievers.PartRetriever}</span> <b>partRetriever</b>
+									
+								</dt>
+								<dd>An instance of PartRetriever.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{function(?Error)}</span> <b>callback</b>
+									
+								</dt>
+								<dd>The callback to call when the Document has been initialized.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="LoadCanvasAsync"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{number}</span>
+					<b>LoadCanvasAsync</b>(pageIndex, zoom, pageRotation, drawComplete(canvases,pageIndex), drawProgressive, canvasNum)
+					
+					</div>
+					<div class="description">
+						Loads a canvas for a particular page index.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>pageIndex</b>
+									
+								</dt>
+								<dd>The page number, zero-indexed, of the requested canvas.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>zoom</b>
+									
+								</dt>
+								<dd>The zoom value to render the page at.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{pageRotation}</span> <b>pageRotation</b>
+									
+								</dt>
+								<dd>The rotation of the page. Valid values are CoreControls.PageRotation.e_0, CoreControls.PageRotation.e_90, CoreControls.PageRotation.e_180, CoreControls.PageRotation.e_270.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{function}</span> <b>drawComplete(canvases,pageIndex)</b>
+									
+								</dt>
+								<dd>The callback to call when the canvas(es) have been completely rendered.  It is passed an array of one or more canvases.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{function}</span> <b>drawProgressive</b>
+									
+								</dt>
+								<dd>The callback to call when the canvas has been partially rendered.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>canvasNum</b>
+									
+								</dt>
+								<dd>Force the page to be split into this many canvases</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{number}</span> An id that can be passed to the corresponding Pause, Resume or Cancel functions</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="LoadPageText"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>LoadPageText</b>(pageIndex, onComplete(text))
+					
+					</div>
+					<div class="description">
+						Gets all the text on the requested page.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>pageIndex</b>
+									
+								</dt>
+								<dd>The page number, zero-indexed, that the text is on.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{function}</span> <b>onComplete(text)</b>
+									
+								</dt>
+								<dd>The callback to call when the text is ready</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="LoadThumbnailAsync"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>LoadThumbnailAsync</b>(pageNumber, onLoadThumbnail(HTMLImageElement|HTMLCanvasElement), name)
+					
+					</div>
+					<div class="description">
+						Loads a thumbnail image for a particular page.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>pageNumber</b>
+									
+								</dt>
+								<dd>The page number of the requested thumbnail.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{function}</span> <b>onLoadThumbnail(HTMLImageElement|HTMLCanvasElement)</b>
+									
+								</dt>
+								<dd>The callback to call when the thumbnail has been retrieved.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>name</b>
+									
+								</dt>
+								<dd>The name to associate with the thumbnail loading so that it can be cancelledIt is passed an image element if the .xod file contains thumbnails and a canvas element otherwise.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="PauseLoadCanvas"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>PauseLoadCanvas</b>(id)
+					
+					</div>
+					<div class="description">
+						Pauses the LoadCanvasAsync call corresponding to the passed in id
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>id</b>
+									
+								</dt>
+								<dd>The id returned from the LoadCanvasAsync call that will be paused.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="ResumeLoadCanvas"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>ResumeLoadCanvas</b>(id)
+					
+					</div>
+					<div class="description">
+						Resumes the LoadCanvasAsync call corresponding to the passed in id
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>id</b>
+									
+								</dt>
+								<dd>The id returned from the LoadCanvasAsync call that will be resumed.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="SetOfflineModeEnabled"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>SetOfflineModeEnabled</b>(enabled)
+					
+					</div>
+					<div class="description">
+						Sets whether offline mode is enabled or not.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>enabled</b>
+									
+								</dt>
+								<dd>The new value for whether offline mode is enabled or not.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="StoreOffline"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>StoreOffline</b>(onComplete, onProgress)
+					
+					</div>
+					<div class="description">
+						Downloads the document for offline viewing.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{function}</span> <b>onComplete</b>
+									
+								</dt>
+								<dd>The function that's called when the document has finished being downloaded or the download has been cancelled</dd>
+							
+								<dt>
+									<span class="light fixedFont">{function(number)}</span> <b>onProgress</b>
+									
+								</dt>
+								<dd>The function that's called on each update in progress of the download.The fraction downloaded is passed as a parameter. (eg 50% downloaded passes 0.5)</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="UnloadResources"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>UnloadResources</b>()
+					
+					</div>
+					<div class="description">
+						Cleans up the resources associated with the document.
+						<!---->
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Mon Mar 24 2014 16:42:00 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

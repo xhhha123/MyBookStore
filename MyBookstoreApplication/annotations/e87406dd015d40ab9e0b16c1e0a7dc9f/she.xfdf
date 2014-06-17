@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+<fields />
+<annots>
+<highlight subject="annotations.types.highlight" page="0" rect="106.785027,722.070181,141.562535,710.962678" name="1d21dc5b-1f14-2de0-113a-e2012f648e38" title="she" date="D:20140612115107+08'00'" color="#FFFF00" interior-color="#000000" opacity="0.25" creationdate="D:20140612112941+08'00'" coords="106.785027,722.070181,141.562535,722.070181,106.785027,710.962678,141.562535,710.962678"><popup flags="print,nozoom,norotate" page="0" rect="26.049712,802.805495,146.049742,742.80548" open="no"/></highlight>
+<highlight subject="annotations.types.highlight" page="0" rect="232.425058,765.510191,274.455069,745.432686" name="c6badd77-8a96-e601-4439-163296846bcb" title="she" date="D:20140612115107+08'00'" color="#FFFF00" interior-color="#000000" opacity="0.25" creationdate="D:20140612113534+08'00'" coords="232.425058,765.510191,274.455069,765.510191,232.425058,745.432686,274.455069,745.432686"><popup flags="print,nozoom,norotate" page="0" rect="151.689744,841.92021,271.689774,781.920195" open="no"/></highlight>
+<highlight subject="annotations.types.highlight" page="0" rect="154.642539,722.070181,189.232547,710.962678" name="7c429b97-f7dc-19bd-70b9-0c462ff4dae0" title="she" date="D:20140612115118+08'00'" color="#FFFF00" opacity="0.25" creationdate="D:20140612115118+08'00'" coords="154.642539,722.070181,189.232547,722.070181,154.642539,710.962678,189.232547,710.962678"><popup flags="print,nozoom,norotate" page="0" rect="73.907224,802.805495,193.907254,742.80548" open="no"/></highlight>
+</annots>
+<pages>
+<defmtx matrix="1.333333,0,0,-1.333333,0,1122.56" />
+</pages>
+</xfdf>
